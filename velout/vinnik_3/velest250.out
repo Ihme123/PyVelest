@@ -1,0 +1,2381 @@
+ >>> Start of program VELEST at 25-06-18 15:49       <<<                        
+
+ ::::::::::::::::::::::::::::::::::::::                                         
+  V E L E S T  - Version : January 3, 1995                                      
+  (Authors: see source code)                                                    
+ ::::::::::::::::::::::::::::::::::::::                                         
+
+
+ Title of this VELEST run:
+
+ vinnik_3
+ --------
+
+
+ Current array-dimensions of program VELEST:
+
+ Max. number of EARTHQUAKES for simult. inversion IEQ = ***
+ Max. number of SHOTS for simult. inversion    INSHOT =  50
+ Max. number of (different) 1D-MODELS      ITOTMODELS =   2
+ Max. number of LAYERS per one 1D-model        INLTOT = 100
+ Max. number of STATIONS in stationlist           IST = 650
+ Max. number of OBSERVATIONS per event MAXOBSPEREVENT = 180
+
+
+
+
+
+
+    INPUT - P A R A M E T E R S :
+
+
+
+***
+***  olat       olon   icoordsystem      zshift   itrial ztrial    ised
+  72.000000-126.000000      0            0.000       0     0.00      0
+***
+*** neqs   nshot    rotate
+     60      0      0.0
+***
+*** isingle   iresolcalc
+       0          0
+***
+*** dmax    itopo    zmin     veladj    zadj   lowveloclay
+   300.00     0      0.01       0.20    5.00       0
+***
+*** nsp    swtfac   vpvs       nmod
+     1      1.00    1.730        1
+***
+***   othet   xythet    zthet    vthet   stathet
+       0.01     0.01     0.01     1.00     0.01
+***
+*** nsinv   nshcor   nshfix     iuseelev    iusestacorr
+       1       0       0           1            1
+***
+*** iturbo    icnvout   istaout   ismpout
+       1         1         1         0
+***
+*** irayout   idrvout   ialeout   idspout   irflout   irfrout   iresout
+       0         0         0         0         0         0         0
+***
+*** delmin   ittmax   invertratio
+    0.010       3          1
+***
+*** Modelfile:
+tmp/vinnik_3/synthvel/model_250.mod
+***
+*** Stationfile:
+./velinp/station.sta
+***
+*** Seismofile:
+ 
+***
+*** File with region names:
+ 
+***
+*** File with region coordinates:
+ 
+***
+*** File #1 with topo data:
+ 
+***
+*** File #2 with topo data:
+ 
+***
+*** DATA INPUT files:
+***
+*** File with Earthquake data:
+./velinp/data.cnv
+***
+*** File with Shot data:
+ 
+***
+*** OUTPUT files:
+***
+*** Main print output file:
+./velout/vinnik_3/velest250.out
+***
+*** File with single event locations:
+velout.vel
+***
+*** File with final hypocenters in *.cnv format:
+./velout/vinnik_3/final_loc250.cnv
+***
+*** File with new station corrections:
+./velout/vinnik_3/stations_corr250.sta
+***
+*** File with summary cards (e.g. for plotting):
+velout.smp
+***
+*** File with raypoints:
+velout.ray
+***
+*** File with derivatives:
+velout.drv
+***
+*** File with ALEs:
+velout.ale
+***
+*** File with Dirichlet spreads:
+velout.dspr
+***
+*** File with reflection points:
+velout.rfl
+***
+*** File with refraction points:
+velout.rfr
+***
+*** File with residuals:
+velout.res
+***
+
+
+
+
+ Origin of cartesian coordinates:
+        72.00000N   126.00000E
+
+  X,Y-AXES rotated clockwise from North
+           Rotation angle (rotate):
+            rotate=    0.0 degr.
+
+ icoordsystem =            0
+ normal SHORT DISTANCE CONVERSION will be made
+ x is positive towards west, y is positive towards north
+
+
+ SHORT DISTANCE CONVERSION on ELLIPSOIDE of WORLD GEODETIC SYSTEM 1972 (WGS72)
+ =============================================================================
+
+ Radius at equator (REARTH)= 6378.13500  km
+   1. / (ellipticity)      =    298.260
+
+ Origin of cartesian coordinates [degrees]:
+   72.0000000 N     -126.0000000 W
+
+  Rotation angle (in degr.) clockwise from
+North  rotate=    0.0
+
+ Radius of sphere at OLAT =   6358.817 km
+
+ Conversion of GEOGRAPHICAL LATITUDE to GEOCENTRICAL LATITUDE:
+ RLATC = TAN(GEOCENTR.LAT) / TAN(GEOGRAPH.LAT)
+ RLATC =   0.99333486
+
+          Short distance conversions:
+          one min lat ~  1.8597 km 
+          one min lon ~  0.5751 km 
+
+
+
+
+
+
+
+    INPUT - M O D E L :
+
+
+
+ Model(s) read from file :
+ tmp/vinnik_3/synthvel/model_250.mod                                             
+
+ model file title: 
+Model: model_250.mod                    
+ Velocity structure for model   1 :
+
+ layer    vel   depth   vdamp  reflector
+   1      4.91  -5.00    1.00         P-VELOCITY MODEL                  
+   2      5.34   0.55    1.00  
+   3      5.98   8.68    1.00  
+   4      6.98  12.89    1.00  
+   5      7.17  26.88    1.00  
+   6      7.37  31.17    1.00  
+   7      7.37  32.21    1.00  
+   8      7.53  41.47    1.00  
+   9      8.54  42.96    1.00  
+
+ Calculation of average velocity starts at layer #            1
+ z = -5.00 ...  0.55    v = 4.91    AVEL = 4.91 downto z =   0.55
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.17 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.36 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.07 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.20 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.23 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.46 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.49 downto z =  42.96
+
+
+ Calculation of average velocity starts at layer #            2
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.34 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.56 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.31 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.43 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.46 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.67 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.70 downto z =  42.96
+
+
+
+
+
+
+    INPUT - S T A T I O N S :
+
+
+
+ Station-parameters read from file :
+ ./velinp/station.sta                                                            
+
+
+     stn latitude longitude elev   x      y      z     ptcor stcor model icc
+   1 624 72.4760N126.2750E     0  -9.37  53.11  -0.00   0.00  0.00   1  13
+   2 628 72.4000N127.1470E     0 -39.15  44.63  -0.00   0.00  0.00   1  12
+   3 620 72.6540N124.3470E     0  56.03  72.98  -0.00   0.00  0.00   1  11
+   4 622 72.4420N125.3130E     0  23.42  49.32  -0.00   0.00  0.00   1  10
+   5 630 72.0750N128.3250E     0 -80.06   8.37  -0.00   0.00  0.00   1   9
+   6 623 72.3260N125.7600E     0   8.21  36.38  -0.00   0.00  0.00   1   8
+   7 627 72.1170N126.9820E     0 -33.78  13.06  -0.00   0.00  0.00   1   7
+   8 621 72.1840N124.8890E     0  38.14  20.53  -0.00   0.00  0.00   1   6
+   9 629 71.9290N127.3130E     0 -45.39  -7.92  -0.00   0.00  0.00   1   5
+  10 625 72.1740N126.1070E     0  -3.67  19.42  -0.00   0.00  0.00   1   4
+  11 626 71.8880N126.0360E     0  -1.25 -12.50  -0.00   0.00  0.00   1   3
+  12 631 71.3990N127.2470E     0 -43.72 -67.06  -0.00   0.00  0.00   1   2
+  13 632 71.5740N129.0720E     0-107.20 -47.53  -0.00   0.00  0.00   1   1
+
+ NO Seismo-parameter-file specified
+ --> NO magnitudes calculated!
+
+
+
+
+   neqs=   60  nshot=    0  nltot=    9
+
+ ~~~ input parameters read.
+ ~~~ set units for first iteration ...
+ ~~~ determine number of unknowns ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ reset G and RHT ...
+ ~~~ input data, raytracing, setup G ...
+
+
+
+
+
+
+    I N P U T - D A T A  
+
+  eq    origin-time    latitude longitude depth    x      y      z    mag ifxOBS
+ WARNING:
+ epicentral distance:8366.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8399.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8431.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8414.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8384.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8424.4 > dmax ( 300.0) ==> skipping phase !
+   1 160818 1613  9.10 73.0030N 124.8570W  23.108422.20 111.92  23.10 1.40 0   0
+ WARNING:
+ epicentral distance:8369.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8402.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8435.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8417.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8388.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8427.8 > dmax ( 300.0) ==> skipping phase !
+   2 160818 1613  9.30 72.9910N 124.8780W  22.808425.70 110.58  22.80 1.10 0   0
+ WARNING:
+ epicentral distance:8950.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8923.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8888.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8876.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8882.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8886.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8846.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8844.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8852.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8834.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8804.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8787.3 > dmax ( 300.0) ==> skipping phase !
+   3 160819 0959 27.30 71.9230N 129.7650W  12.108842.98  -8.59  12.10 4.00 0   0
+ WARNING:
+ epicentral distance:8947.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8920.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8874.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8844.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8841.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8850.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8832.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8817.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8802.4 > dmax ( 300.0) ==> skipping phase !
+   4 160820 1506 15.70 71.9380N 129.7950W  11.008840.46  -6.92  11.00 1.50 0   0
+ WARNING:
+ epicentral distance:8685.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8680.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8656.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8650.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8638.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8726.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8623.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8648.1 > dmax ( 300.0) ==> skipping phase !
+   5 160822 1318 49.50 72.3650N 127.0840W  16.508646.71  40.73  16.50 0.60 0   0
+ WARNING:
+ epicentral distance:8542.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8574.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8557.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8569.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8527.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8509.5 > dmax ( 300.0) ==> skipping phase !
+   6 160906 1514 39.70 72.5080N 125.6840W  12.108565.52  56.68  12.10 0.90 0   0
+ WARNING:
+ epicentral distance:8405.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8438.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8471.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8453.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8501.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8463.8 > dmax ( 300.0) ==> skipping phase !
+   7 161004 0841 51.20 72.8480N 124.9640W  15.608461.89  94.62  15.60 0.20 0   0
+ WARNING:
+ epicentral distance:8400.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8433.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8466.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8448.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8419.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8496.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8491.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8502.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8537.4 > dmax ( 300.0) ==> skipping phase !
+   8 161005 1619 46.90 72.8770N 125.0150W  19.008456.86  97.86  19.00 1.00 0   0
+ WARNING:
+ epicentral distance:8401.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8434.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8467.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8449.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8496.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8491.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8502.9 > dmax ( 300.0) ==> skipping phase !
+   9 161006 0156 55.90 72.8740N 125.0160W  13.908457.59  97.52  13.90 1.00 0   0
+ WARNING:
+ epicentral distance:8401.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8434.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8449.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8419.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8496.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8503.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8537.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8565.7 > dmax ( 300.0) ==> skipping phase !
+  10 161009 0036 44.70 72.8720N 124.9930W  17.208457.28  97.30  17.20 1.30 0   0
+ WARNING:
+ epicentral distance:8403.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8436.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8451.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8421.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8505.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8540.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8504.7 > dmax ( 300.0) ==> skipping phase !
+  11 161009 0036 44.90 72.8580N 124.9610W  18.608459.46  95.74  18.60 1.20 0   0
+ WARNING:
+ epicentral distance:8533.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8500.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8515.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8467.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8485.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8557.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8568.9 > dmax ( 300.0) ==> skipping phase !
+  12 161012 0800 22.10 72.7380N 126.0390W  18.508523.86  82.35  18.50 0.80 0   0
+ WARNING:
+ epicentral distance:8753.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8723.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8721.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8711.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8729.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8696.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8664.2 > dmax ( 300.0) ==> skipping phase !
+  13 161015 1013 36.50 72.0400N 126.9980W  11.208719.92   4.46  11.20 0.70 0   0
+ WARNING:
+ epicentral distance:8463.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8495.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8511.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8481.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8528.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8558.4 > dmax ( 300.0) ==> skipping phase !
+  14 161021 0507 33.30 72.5750N 124.7820W  10.108519.25  64.16  10.10 0.80 0   0
+ WARNING:
+ epicentral distance:8429.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8462.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8494.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8447.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8524.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8487.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8565.8 > dmax ( 300.0) ==> skipping phase !
+  15 161125 0156 34.10 72.7420N 124.9290W  14.508485.39  82.80  14.50 0.60 0   0
+ WARNING:
+ epicentral distance:8424.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8457.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8490.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8442.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8519.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8482.5 > dmax ( 300.0) ==> skipping phase !
+  16 161125 0517 25.90 72.7650N 124.9470W  13.508480.64  85.36  13.50 1.60 0   0
+ WARNING:
+ epicentral distance:8422.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8455.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8488.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8440.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8517.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8480.5 > dmax ( 300.0) ==> skipping phase !
+  17 161125 0525 15.90 72.7740N 124.9500W  11.608478.65  86.37  11.60 0.80 0   0
+ WARNING:
+ epicentral distance:8432.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8465.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8498.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8480.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8527.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8490.3 > dmax ( 300.0) ==> skipping phase !
+  18 161125 0556  2.00 72.7350N 124.9750W   5.708488.57  82.01   5.70 0.20 0   0
+ WARNING:
+ epicentral distance:8725.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8730.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8736.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8771.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8695.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8692.7 > dmax ( 300.0) ==> skipping phase !
+  19 170117 0846 48.60 72.2130N 127.3470W  22.008691.37  23.77  22.00 0.30 0   0
+ WARNING:
+ epicentral distance:8853.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8818.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8807.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8880.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8817.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8776.9 > dmax ( 300.0) ==> skipping phase !
+  20 170122 1614 27.60 71.9670N 128.0470W  10.308773.23  -3.68  10.30 0.90 0   0
+ WARNING:
+ epicentral distance:8601.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8568.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8595.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8631.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8593.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8636.6 > dmax ( 300.0) ==> skipping phase !
+  21 170125 2244  0.20 72.4440N 126.0250W  13.108592.08  49.54  13.10 0.80 0   0
+ WARNING:
+ epicentral distance:8441.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8489.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8507.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8459.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8537.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8499.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8542.7 > dmax ( 300.0) ==> skipping phase !
+  22 170302 1359 59.10 72.6830N 124.8900W  11.508497.80  76.21  11.50 0.50 0   0
+ WARNING:
+ epicentral distance:8442.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8475.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8490.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8502.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8537.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8578.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8543.3 > dmax ( 300.0) ==> skipping phase !
+  23 170304 2135  2.90 72.6880N 124.9420W  13.408498.39  76.77  13.40 1.30 0   0
+ WARNING:
+ epicentral distance:8440.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8473.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8488.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8505.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8500.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8535.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8530.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8576.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8541.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8604.5 > dmax ( 300.0) ==> skipping phase !
+  24 170307 0447 21.00 72.6940N 124.9240W  14.208496.39  77.44  14.20 1.70 0   0
+ WARNING:
+ epicentral distance:8440.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8473.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8488.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8506.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8536.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8498.5 > dmax ( 300.0) ==> skipping phase !
+  25 170307 2016 50.80 72.6910N 124.9150W  15.308496.78  77.10  15.30 1.10 0   0
+ WARNING:
+ epicentral distance:8442.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8474.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8507.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8460.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8537.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8578.6 > dmax ( 300.0) ==> skipping phase !
+  26 170309 1454  0.80 72.6830N 124.9040W  15.608498.27  76.21  15.60 0.30 0   0
+ WARNING:
+ epicentral distance:8648.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8642.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8678.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8631.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8640.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8601.1 > dmax ( 300.0) ==> skipping phase !
+  27 170311 0430 55.40 72.3130N 126.5090W  24.508639.23  34.93  24.50 0.30 0   0
+ WARNING:
+ epicentral distance:8864.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8829.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8818.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8785.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8788.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8794.1 > dmax ( 300.0) ==> skipping phase !
+  28 170312 0416 39.20 71.9240N 128.0800W   3.408784.48  -8.48   3.40 2.10 0   0
+ WARNING:
+ epicentral distance:8439.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8472.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8487.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8504.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8457.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8534.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8529.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8575.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8540.4 > dmax ( 300.0) ==> skipping phase !
+  29 170313 0553 59.10 72.6980N 124.9230W  15.108495.42  77.89  15.10 1.00 0   0
+ WARNING:
+ epicentral distance:8550.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8520.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8502.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8568.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8562.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8597.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8560.2 > dmax ( 300.0) ==> skipping phase !
+  30 170313 0809  5.60 72.4500N 125.0880W  14.908558.74  50.21  14.90 1.20 0   0
+ WARNING:
+ epicentral distance:8643.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8631.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8649.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8616.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8601.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8678.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8685.1 > dmax ( 300.0) ==> skipping phase !
+  31 170317 1007 14.10 72.2350N 125.9880W   3.908639.61  26.22   3.90 0.50 0   0
+ WARNING:
+ epicentral distance:8741.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8753.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8711.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8717.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8699.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8669.6 > dmax ( 300.0) ==> skipping phase !
+  32 170320 0711 14.60 72.1250N 127.2220W  16.808707.71  13.95  16.80 0.90 0   0
+ WARNING:
+ epicentral distance:8438.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8471.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8486.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8503.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8533.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8496.2 > dmax ( 300.0) ==> skipping phase !
+  33 170320 0853 56.40 72.7090N 124.9700W   5.108494.45  79.11   5.10 0.40 0   0
+ WARNING:
+ epicentral distance:8611.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8594.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8606.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8579.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8641.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8564.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8603.8 > dmax ( 300.0) ==> skipping phase !
+  34 170320 1900 34.30 72.4150N 126.1290W  18.008602.40  46.31  18.00 0.60 0   0
+ WARNING:
+ epicentral distance:8995.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8968.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8933.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8931.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8922.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8927.6 > dmax ( 300.0) ==> skipping phase !
+  35 170323 0519 24.60 71.6470N 129.1860W   5.208888.10 -39.39   5.20 1.20 0   0
+ WARNING:
+ epicentral distance:8535.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8550.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8520.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8502.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8568.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8598.0 > dmax ( 300.0) ==> skipping phase !
+  36 170323 1612 49.70 72.4530N 125.1120W   8.308558.86  50.55   8.30 0.50 0   0
+ WARNING:
+ epicentral distance:8799.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8834.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8788.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8758.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8755.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8861.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8798.3 > dmax ( 300.0) ==> skipping phase !
+  37 170326 0836 34.10 71.9930N 127.6760W  16.108754.32  -0.78  16.10 1.50 0   0
+ WARNING:
+ epicentral distance:8492.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8525.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8507.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8459.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8555.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8477.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8517.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8596.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8560.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8623.9 > dmax ( 300.0) ==> skipping phase !
+  38 170402 0422  1.00 72.7220N 125.6900W  21.908515.79  80.56  21.90 1.20 0   0
+ WARNING:
+ epicentral distance:8523.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8490.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8505.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8457.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8553.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8594.2 > dmax ( 300.0) ==> skipping phase !
+  39 170402 0636 37.20 72.7310N 125.6930W  23.508513.79  81.57  23.50 0.70 0   0
+ WARNING:
+ epicentral distance:8407.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8440.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8425.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8455.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8472.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8465.2 > dmax ( 300.0) ==> skipping phase !
+  40 170404 2347 35.70 72.7580N 124.3890W  22.608463.41  84.58  22.60 0.50 0   0
+ WARNING:
+ epicentral distance:8979.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8917.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8915.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8906.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8911.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8873.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8881.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8864.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8849.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8834.1 > dmax ( 300.0) ==> skipping phase !
+  41 170405 0307 36.10 71.6810N 128.9570W  15.308872.11 -35.60  15.30 1.00 0   0
+ WARNING:
+ epicentral distance:8954.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8956.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8912.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8950.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8914.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8920.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8903.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8872.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8887.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8855.6 > dmax ( 300.0) ==> skipping phase !
+  42 170405 1410 53.20 71.5100N 128.9090W   9.308910.73 -54.68   9.30 1.70 0   0
+ WARNING:
+ epicentral distance:8800.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8759.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8754.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8766.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8828.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8730.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8722.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8765.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8697.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8682.5 > dmax ( 300.0) ==> skipping phase !
+  43 170406 0838 43.20 72.3850N 129.3850W  15.508720.59  42.96  15.50 0.90 0   0
+ WARNING:
+ epicentral distance:8525.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8492.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8507.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8459.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8554.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8477.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8517.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8596.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8560.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8623.8 > dmax ( 300.0) ==> skipping phase !
+  44 170406 1728  1.00 72.7230N 125.6920W  21.308515.62  80.67  21.30 0.90 0   0
+ WARNING:
+ epicentral distance:8461.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8493.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8509.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8526.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8479.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8521.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8556.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8551.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8518.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8563.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8597.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8562.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8625.3 > dmax ( 300.0) ==> skipping phase !
+  45 170408 1004 44.90 72.6070N 124.9440W  15.008517.31  67.73  15.00 1.40 0   0
+ WARNING:
+ epicentral distance:9047.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:9020.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8983.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8979.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8941.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8943.8 > dmax ( 300.0) ==> skipping phase !
+  46 170412 1507  0.60 71.5070N 129.7200W   0.008939.79 -55.01   0.00 0.70 0   0
+ WARNING:
+ epicentral distance:8718.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8713.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8725.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8759.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8681.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8656.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8724.0 > dmax ( 300.0) ==> skipping phase !
+  47 170414 0459 18.80 72.2680N 127.3840W  20.108679.73  29.90  20.10 0.50 0   0
+ WARNING:
+ epicentral distance:8733.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8738.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8779.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8703.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8709.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8701.1 > dmax ( 300.0) ==> skipping phase !
+  48 170414 1656 23.40 72.1850N 127.4000W  15.508699.75  20.64  15.50 0.20 0   0
+ WARNING:
+ epicentral distance:8837.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8865.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8796.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8791.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8766.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8759.0 > dmax ( 300.0) ==> skipping phase !
+  49 170414 1753 32.80 72.3840N 130.4600W  17.908757.54  42.85  17.90 0.70 0   0
+ WARNING:
+ epicentral distance:8788.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8776.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8743.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8746.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8822.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8782.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8734.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8786.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8752.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8704.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8719.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8850.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8687.0 > dmax ( 300.0) ==> skipping phase !
+  50 170416 0523 41.90 71.9560N 127.0880W  19.208742.69  -4.91  19.20 1.60 0   0
+ WARNING:
+ epicentral distance:8367.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8399.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8432.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8415.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8385.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8427.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8462.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8457.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8425.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8469.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8503.8 > dmax ( 300.0) ==> skipping phase !
+  51 170416 1220 14.20 72.9470N 124.4980W  20.408423.17 105.67  20.40 1.00 0   0
+ WARNING:
+ epicentral distance:8402.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8435.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8468.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8450.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8421.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8462.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8498.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8493.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8460.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8504.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8539.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8504.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8567.2 > dmax ( 300.0) ==> skipping phase !
+  52 170416 1821  5.50 72.8670N 125.0030W  19.308458.78  96.74  19.30 1.30 0   0
+ WARNING:
+ epicentral distance:8417.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8449.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8465.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8435.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8482.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8477.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8512.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8507.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8474.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8519.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8553.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8518.2 > dmax ( 300.0) ==> skipping phase !
+  53 170418 1500 12.90 72.7340N 124.5130W  23.108473.18  81.90  23.10 1.30 0   0
+ WARNING:
+ epicentral distance:8730.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8689.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8684.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8660.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8696.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8654.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8642.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8627.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8652.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8612.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8695.4 > dmax ( 300.0) ==> skipping phase !
+  54 170420 1302 36.20 72.6290N 129.0250W  21.808650.62  70.19  21.80 0.90 0   0
+ WARNING:
+ epicentral distance:8391.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8424.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8439.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8457.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8410.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8487.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8449.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8528.4 > dmax ( 300.0) ==> skipping phase !
+  55 170423 1455 44.10 72.8400N 124.4930W  16.808447.87  93.73  16.80 0.60 0   0
+ WARNING:
+ epicentral distance:8461.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8494.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8509.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8479.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8526.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8521.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8556.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8519.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8551.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8563.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8597.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8562.3 > dmax ( 300.0) ==> skipping phase !
+  56 170423 2313 41.80 72.5960N 124.8740W  22.008517.49  66.50  22.00 1.30 0   0
+ WARNING:
+ epicentral distance:8854.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8819.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8808.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8813.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8818.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8778.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8783.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8766.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8736.2 > dmax ( 300.0) ==> skipping phase !
+  57 170425 0652 23.30 71.9600N 128.0310W   0.008774.33  -4.46   0.00 1.20 0   0
+ WARNING:
+ epicentral distance:8859.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8824.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8812.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8818.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8782.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8788.6 > dmax ( 300.0) ==> skipping phase !
+  58 170426 0051 23.20 71.9450N 128.0660W   6.608779.06  -6.14   6.60 0.70 0   0
+ WARNING:
+ epicentral distance:8753.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8765.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8759.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8800.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8723.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8729.4 > dmax ( 300.0) ==> skipping phase !
+  59 170426 1425 21.20 72.0790N 127.2630W  21.008719.91   8.82  21.00 0.10 0   0
+ WARNING:
+ epicentral distance:8647.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8653.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8678.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8683.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8689.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8606.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8724.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance:8688.5 > dmax ( 300.0) ==> skipping phase !
+  60 170426 1840 44.10 72.2710N 126.3670W  18.108644.19  30.24  18.10 1.30 0   0
+
+
+ Total number of stations with readings:   0
+
+ Total number of readings:       0
+ Total number of P readings:       0
+ Total number of S readings:       0
+
+
+ ~~~ store parts of G ...
+ ~~~ compute RMS and DATVAR ...
+
+ Total number of observations is:     0
+
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ ZERO events of this kind found! (lucky guy!!!)
+
+ ~~~ save initial datvar ...
+
+ Iteration nr  0 obtained:
+ DATVAR=  999.989990 mean sqrd residual=   999.989990  RMS RESIDUAL=    31.622618
+
+ After  0 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+     0 straight and direct rays =  0.00000 [  0.00000]
+     0 refracted           rays =  0.00000 [  0.00000]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+     0 ALL                 RAYS =  0.00000 [  0.00000]        0.00 %
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+           ITERATION no  1
+
+ ~~~ set units for this iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ Damping factors to be used in this iteration:
+   Othet=   0.010   XYthet  =   0.010   Zthet=  0.010
+ STAthet=   0.010   Vthet   =   1.000
+
+ ~~~ damp G ...
+ ~~~ solve G * b = RHT ...
+ ~~~ fix units ...
+ ~~~ apply eventually step-length damping ...
+ ~~~ adjust model (hypocenters, stacorr & veloc.) ...
+
+ doing velocity adjustments now...
+
+ doing station-correction adjustments...
+
+ ~~~ compute effective step-length ...
+
+ (Applied) Step length =   0.014
+
+ ~~~ set units for next iteration ...
+ ~~~ determine number of unknowns for next iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ reset G and RHT ...
+ ~~~ raytracing, setup G ...
+ ~~~ store parts of G ...
+ ~~~ set units back for current iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ compute RMS and DATVAR ...
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ ZERO events of this kind found! (lucky guy!!!)
+
+ ~~~ check solution (better? worse?) ...
+
+ Iteration nr  1 obtained:
+ DATVAR=  999.989990 mean sqrd residual=   999.989990  RMS RESIDUAL=    31.622618
+
+ After  1 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+     0 straight and direct rays =  0.00000 [  0.00000]
+     0 refracted           rays =  0.00000 [  0.00000]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+     0 ALL                 RAYS =  0.00000 [  0.00000]        0.00 %
+
+ ~~~ iteration done; output results ...
+
+  eq       ot     x      y      z      rms    avres   dot     dx     dy     dz
+    1      9.108422.20 111.92  23.10   0.00   0.00    0.000  0.000  0.000  0.000
+    2      9.308425.70 110.58  22.80   0.00   0.00    0.000  0.000  0.000  0.000
+    3     27.308842.98  -8.59  12.10   0.00   0.00    0.000  0.000  0.000  0.000
+    4     15.708840.46  -6.92  11.00   0.00   0.00    0.000  0.000  0.000  0.000
+    5     49.508646.71  40.73  16.50   0.00   0.00    0.000  0.000  0.000  0.000
+    6     39.708565.52  56.68  12.10   0.00   0.00    0.000  0.000  0.000  0.000
+    7     51.208461.89  94.62  15.60   0.00   0.00    0.000  0.000  0.000  0.000
+    8     46.908456.86  97.86  19.00   0.00   0.00    0.000  0.000  0.000  0.000
+    9     55.908457.59  97.52  13.90   0.00   0.00    0.000  0.000  0.000  0.000
+   10     44.708457.28  97.30  17.20   0.00   0.00    0.000  0.000  0.000  0.000
+   11     44.908459.46  95.74  18.60   0.00   0.00    0.000  0.000  0.000  0.000
+   12     22.108523.86  82.35  18.50   0.00   0.00    0.000  0.000  0.000  0.000
+   13     36.508719.92   4.46  11.20   0.00   0.00    0.000  0.000  0.000  0.000
+   14     33.308519.25  64.16  10.10   0.00   0.00    0.000  0.000  0.000  0.000
+   15     34.108485.39  82.80  14.50   0.00   0.00    0.000  0.000  0.000  0.000
+   16     25.908480.64  85.36  13.50   0.00   0.00    0.000  0.000  0.000  0.000
+   17     15.908478.65  86.37  11.60   0.00   0.00    0.000  0.000  0.000  0.000
+   18      2.008488.57  82.01   5.70   0.00   0.00    0.000  0.000  0.000  0.000
+   19     48.608691.37  23.77  22.00   0.00   0.00    0.000  0.000  0.000  0.000
+   20     27.608773.23  -3.68  10.30   0.00   0.00    0.000  0.000  0.000  0.000
+   21      0.208592.08  49.54  13.10   0.00   0.00    0.000  0.000  0.000  0.000
+   22     59.108497.80  76.21  11.50   0.00   0.00    0.000  0.000  0.000  0.000
+   23      2.908498.39  76.77  13.40   0.00   0.00    0.000  0.000  0.000  0.000
+   24     21.008496.39  77.44  14.20   0.00   0.00    0.000  0.000  0.000  0.000
+   25     50.808496.78  77.10  15.30   0.00   0.00    0.000  0.000  0.000  0.000
+   26      0.808498.27  76.21  15.60   0.00   0.00    0.000  0.000  0.000  0.000
+   27     55.408639.23  34.93  24.50   0.00   0.00    0.000  0.000  0.000  0.000
+   28     39.208784.48  -8.48   3.40   0.00   0.00    0.000  0.000  0.000  0.000
+   29     59.108495.42  77.89  15.10   0.00   0.00    0.000  0.000  0.000  0.000
+   30      5.608558.74  50.21  14.90   0.00   0.00    0.000  0.000  0.000  0.000
+   31     14.108639.61  26.22   3.90   0.00   0.00    0.000  0.000  0.000  0.000
+   32     14.608707.71  13.95  16.80   0.00   0.00    0.000  0.000  0.000  0.000
+   33     56.408494.45  79.11   5.10   0.00   0.00    0.000  0.000  0.000  0.000
+   34     34.308602.40  46.31  18.00   0.00   0.00    0.000  0.000  0.000  0.000
+   35     24.608888.10 -39.39   5.20   0.00   0.00    0.000  0.000  0.000  0.000
+   36     49.708558.86  50.55   8.30   0.00   0.00    0.000  0.000  0.000  0.000
+   37     34.108754.32  -0.78  16.10   0.00   0.00    0.000  0.000  0.000  0.000
+   38      1.008515.79  80.56  21.90   0.00   0.00    0.000  0.000  0.000  0.000
+   39     37.208513.79  81.57  23.50   0.00   0.00    0.000  0.000  0.000  0.000
+   40     35.708463.41  84.58  22.60   0.00   0.00    0.000  0.000  0.000  0.000
+   41     36.108872.11 -35.60  15.30   0.00   0.00    0.000  0.000  0.000  0.000
+   42     53.208910.73 -54.68   9.30   0.00   0.00    0.000  0.000  0.000  0.000
+   43     43.208720.59  42.96  15.50   0.00   0.00    0.000  0.000  0.000  0.000
+   44      1.008515.62  80.67  21.30   0.00   0.00    0.000  0.000  0.000  0.000
+   45     44.908517.31  67.73  15.00   0.00   0.00    0.000  0.000  0.000  0.000
+ ***** depth constrained for event    46
+   46      0.608939.79 -55.01   0.01   0.00   0.00    0.000  0.000  0.000  0.010
+   47     18.808679.73  29.90  20.10   0.00   0.00    0.000  0.000  0.000  0.000
+   48     23.408699.75  20.64  15.50   0.00   0.00    0.000  0.000  0.000  0.000
+   49     32.808757.54  42.85  17.90   0.00   0.00    0.000  0.000  0.000  0.000
+   50     41.908742.69  -4.91  19.20   0.00   0.00    0.000  0.000  0.000  0.000
+   51     14.208423.17 105.67  20.40   0.00   0.00    0.000  0.000  0.000  0.000
+   52      5.508458.78  96.74  19.30   0.00   0.00    0.000  0.000  0.000  0.000
+   53     12.908473.18  81.90  23.10   0.00   0.00    0.000  0.000  0.000  0.000
+   54     36.208650.62  70.19  21.80   0.00   0.00    0.000  0.000  0.000  0.000
+   55     44.108447.87  93.73  16.80   0.00   0.00    0.000  0.000  0.000  0.000
+   56     41.808517.49  66.50  22.00   0.00   0.00    0.000  0.000  0.000  0.000
+ ***** depth constrained for event    57
+   57     23.308774.33  -4.46   0.01   0.00   0.00    0.000  0.000  0.000  0.010
+   58     23.208779.06  -6.14   6.60   0.00   0.00    0.000  0.000  0.000  0.000
+   59     21.208719.91   8.82  21.00   0.00   0.00    0.000  0.000  0.000  0.000
+   60     44.108644.19  30.24  18.10   0.00   0.00    0.000  0.000  0.000  0.000
+
+ A V E R A G E   of ADJUSTMENTS :                     0.000  0.000  0.000  0.000
+ A V E R A G E   of ABSOLUTE ADJUSTMENTS :            0.000  0.000  0.000  0.000
+
+
+NO step length damping applied
+
+
+ Velocity adjustments:
+     vp    dvp      hp   reflector
+ Velocity model   1
+   4.910  0.000   -5.000      
+   5.340  0.000    0.550      
+   5.980  0.000    8.680      
+   6.980  0.000   12.890      
+   7.170  0.000   26.880      
+   7.370  0.000   31.170      
+   7.370  0.000   32.210      
+   7.530  0.000   41.470      
+   8.540  0.000   42.960      
+
+ Calculation of average velocity starts at layer #           1
+ z = -5.00 ...  0.55    v = 4.91    AVEL = 4.91 downto z =   0.55
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.17 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.36 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.07 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.20 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.23 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.46 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.49 downto z =  42.96
+
+
+ Calculation of average velocity starts at layer #           2
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.34 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.56 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.31 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.43 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.46 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.67 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.70 downto z =  42.96
+
+
+
+ Adjusted station corrections:
+   stn  ptcor  dpcor  
+  624   0.000  0.000  628   0.000  0.000  620   0.000  0.000  622   0.000  0.000
+  630   0.000  0.000  623   0.000  0.000  627   0.000  0.000  621   0.000  0.000
+  629   0.000  0.000  625   0.000  0.000  626   0.000  0.000  631   0.000  0.000
+  632   0.000  0.000
+
+ ~~~ another iteration? ...
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+           ITERATION no  2
+
+ ~~~ set units for this iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ Damping factors to be used in this iteration:
+   Othet=   0.010   XYthet  =   0.010   Zthet=  0.010
+ STAthet=   0.010   Vthet   =   1.000
+
+ ~~~ damp G ...
+ ~~~ solve G * b = RHT ...
+ ~~~ fix units ...
+ ~~~ apply eventually step-length damping ...
+ ~~~ adjust model (hypocenters, stacorr & veloc.) ...
+
+ doing velocity adjustments now...
+
+ doing station-correction adjustments...
+
+ ~~~ compute effective step-length ...
+
+ (Applied) Step length =   0.000
+
+ ~~~ set units for next iteration ...
+ ~~~ determine number of unknowns for next iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ reset G and RHT ...
+ ~~~ raytracing, setup G ...
+ ~~~ store parts of G ...
+ ~~~ set units back for current iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ compute RMS and DATVAR ...
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ ZERO events of this kind found! (lucky guy!!!)
+
+ ~~~ check solution (better? worse?) ...
+
+ Iteration nr  2 obtained:
+ DATVAR=  999.989990 mean sqrd residual=   999.989990  RMS RESIDUAL=    31.622618
+
+ After  2 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+     0 straight and direct rays =  0.00000 [  0.00000]
+     0 refracted           rays =  0.00000 [  0.00000]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+     0 ALL                 RAYS =  0.00000 [  0.00000]        0.00 %
+
+ ~~~ iteration done; output results ...
+
+  eq       ot     x      y      z      rms    avres   dot     dx     dy     dz
+    1      9.108422.20 111.92  23.10   0.00   0.00    0.000  0.000  0.000  0.000
+    2      9.308425.70 110.58  22.80   0.00   0.00    0.000  0.000  0.000  0.000
+    3     27.308842.98  -8.59  12.10   0.00   0.00    0.000  0.000  0.000  0.000
+    4     15.708840.46  -6.92  11.00   0.00   0.00    0.000  0.000  0.000  0.000
+    5     49.508646.71  40.73  16.50   0.00   0.00    0.000  0.000  0.000  0.000
+    6     39.708565.52  56.68  12.10   0.00   0.00    0.000  0.000  0.000  0.000
+    7     51.208461.89  94.62  15.60   0.00   0.00    0.000  0.000  0.000  0.000
+    8     46.908456.86  97.86  19.00   0.00   0.00    0.000  0.000  0.000  0.000
+    9     55.908457.59  97.52  13.90   0.00   0.00    0.000  0.000  0.000  0.000
+   10     44.708457.28  97.30  17.20   0.00   0.00    0.000  0.000  0.000  0.000
+   11     44.908459.46  95.74  18.60   0.00   0.00    0.000  0.000  0.000  0.000
+   12     22.108523.86  82.35  18.50   0.00   0.00    0.000  0.000  0.000  0.000
+   13     36.508719.92   4.46  11.20   0.00   0.00    0.000  0.000  0.000  0.000
+   14     33.308519.25  64.16  10.10   0.00   0.00    0.000  0.000  0.000  0.000
+   15     34.108485.39  82.80  14.50   0.00   0.00    0.000  0.000  0.000  0.000
+   16     25.908480.64  85.36  13.50   0.00   0.00    0.000  0.000  0.000  0.000
+   17     15.908478.65  86.37  11.60   0.00   0.00    0.000  0.000  0.000  0.000
+   18      2.008488.57  82.01   5.70   0.00   0.00    0.000  0.000  0.000  0.000
+   19     48.608691.37  23.77  22.00   0.00   0.00    0.000  0.000  0.000  0.000
+   20     27.608773.23  -3.68  10.30   0.00   0.00    0.000  0.000  0.000  0.000
+   21      0.208592.08  49.54  13.10   0.00   0.00    0.000  0.000  0.000  0.000
+   22     59.108497.80  76.21  11.50   0.00   0.00    0.000  0.000  0.000  0.000
+   23      2.908498.39  76.77  13.40   0.00   0.00    0.000  0.000  0.000  0.000
+   24     21.008496.39  77.44  14.20   0.00   0.00    0.000  0.000  0.000  0.000
+   25     50.808496.78  77.10  15.30   0.00   0.00    0.000  0.000  0.000  0.000
+   26      0.808498.27  76.21  15.60   0.00   0.00    0.000  0.000  0.000  0.000
+   27     55.408639.23  34.93  24.50   0.00   0.00    0.000  0.000  0.000  0.000
+   28     39.208784.48  -8.48   3.40   0.00   0.00    0.000  0.000  0.000  0.000
+   29     59.108495.42  77.89  15.10   0.00   0.00    0.000  0.000  0.000  0.000
+   30      5.608558.74  50.21  14.90   0.00   0.00    0.000  0.000  0.000  0.000
+   31     14.108639.61  26.22   3.90   0.00   0.00    0.000  0.000  0.000  0.000
+   32     14.608707.71  13.95  16.80   0.00   0.00    0.000  0.000  0.000  0.000
+   33     56.408494.45  79.11   5.10   0.00   0.00    0.000  0.000  0.000  0.000
+   34     34.308602.40  46.31  18.00   0.00   0.00    0.000  0.000  0.000  0.000
+   35     24.608888.10 -39.39   5.20   0.00   0.00    0.000  0.000  0.000  0.000
+   36     49.708558.86  50.55   8.30   0.00   0.00    0.000  0.000  0.000  0.000
+   37     34.108754.32  -0.78  16.10   0.00   0.00    0.000  0.000  0.000  0.000
+   38      1.008515.79  80.56  21.90   0.00   0.00    0.000  0.000  0.000  0.000
+   39     37.208513.79  81.57  23.50   0.00   0.00    0.000  0.000  0.000  0.000
+   40     35.708463.41  84.58  22.60   0.00   0.00    0.000  0.000  0.000  0.000
+   41     36.108872.11 -35.60  15.30   0.00   0.00    0.000  0.000  0.000  0.000
+   42     53.208910.73 -54.68   9.30   0.00   0.00    0.000  0.000  0.000  0.000
+   43     43.208720.59  42.96  15.50   0.00   0.00    0.000  0.000  0.000  0.000
+   44      1.008515.62  80.67  21.30   0.00   0.00    0.000  0.000  0.000  0.000
+   45     44.908517.31  67.73  15.00   0.00   0.00    0.000  0.000  0.000  0.000
+   46      0.608939.79 -55.01   0.01   0.00   0.00    0.000  0.000  0.000  0.000
+   47     18.808679.73  29.90  20.10   0.00   0.00    0.000  0.000  0.000  0.000
+   48     23.408699.75  20.64  15.50   0.00   0.00    0.000  0.000  0.000  0.000
+   49     32.808757.54  42.85  17.90   0.00   0.00    0.000  0.000  0.000  0.000
+   50     41.908742.69  -4.91  19.20   0.00   0.00    0.000  0.000  0.000  0.000
+   51     14.208423.17 105.67  20.40   0.00   0.00    0.000  0.000  0.000  0.000
+   52      5.508458.78  96.74  19.30   0.00   0.00    0.000  0.000  0.000  0.000
+   53     12.908473.18  81.90  23.10   0.00   0.00    0.000  0.000  0.000  0.000
+   54     36.208650.62  70.19  21.80   0.00   0.00    0.000  0.000  0.000  0.000
+   55     44.108447.87  93.73  16.80   0.00   0.00    0.000  0.000  0.000  0.000
+   56     41.808517.49  66.50  22.00   0.00   0.00    0.000  0.000  0.000  0.000
+   57     23.308774.33  -4.46   0.01   0.00   0.00    0.000  0.000  0.000  0.000
+   58     23.208779.06  -6.14   6.60   0.00   0.00    0.000  0.000  0.000  0.000
+   59     21.208719.91   8.82  21.00   0.00   0.00    0.000  0.000  0.000  0.000
+   60     44.108644.19  30.24  18.10   0.00   0.00    0.000  0.000  0.000  0.000
+
+ A V E R A G E   of ADJUSTMENTS :                     0.000  0.000  0.000  0.000
+ A V E R A G E   of ABSOLUTE ADJUSTMENTS :            0.000  0.000  0.000  0.000
+
+
+NO step length damping applied
+
+
+ Velocity adjustments:
+     vp    dvp      hp   reflector
+ Velocity model   1
+   4.910  0.000   -5.000      
+   5.340  0.000    0.550      
+   5.980  0.000    8.680      
+   6.980  0.000   12.890      
+   7.170  0.000   26.880      
+   7.370  0.000   31.170      
+   7.370  0.000   32.210      
+   7.530  0.000   41.470      
+   8.540  0.000   42.960      
+
+ Calculation of average velocity starts at layer #           1
+ z = -5.00 ...  0.55    v = 4.91    AVEL = 4.91 downto z =   0.55
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.17 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.36 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.07 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.20 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.23 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.46 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.49 downto z =  42.96
+
+
+ Calculation of average velocity starts at layer #           2
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.34 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.56 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.31 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.43 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.46 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.67 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.70 downto z =  42.96
+
+
+
+ Adjusted station corrections:
+   stn  ptcor  dpcor  
+  624   0.000  0.000  628   0.000  0.000  620   0.000  0.000  622   0.000  0.000
+  630   0.000  0.000  623   0.000  0.000  627   0.000  0.000  621   0.000  0.000
+  629   0.000  0.000  625   0.000  0.000  626   0.000  0.000  631   0.000  0.000
+  632   0.000  0.000
+
+ ~~~ another iteration? ...
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+           ITERATION no  3
+
+ ~~~ set units for this iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ Damping factors to be used in this iteration:
+   Othet=   0.010   XYthet  =   0.010   Zthet=  0.010
+ STAthet=   0.010   Vthet   =   1.000
+
+ ~~~ damp G ...
+ ~~~ solve G * b = RHT ...
+ ~~~ fix units ...
+ ~~~ apply eventually step-length damping ...
+ ~~~ adjust model (hypocenters, stacorr & veloc.) ...
+
+ doing velocity adjustments now...
+
+ doing station-correction adjustments...
+
+ ~~~ compute effective step-length ...
+
+ (Applied) Step length =   0.000
+
+ ~~~ set units for next iteration ...
+ ~~~ determine number of unknowns for next iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ reset G and RHT ...
+ ~~~ raytracing, setup G ...
+ ~~~ store parts of G ...
+ ~~~ set units back for current iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  261
+ Number of effective unknowns        :  nvareff =  249
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   34191
+
+ ~~~ compute RMS and DATVAR ...
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ ZERO events of this kind found! (lucky guy!!!)
+
+ ~~~ check solution (better? worse?) ...
+
+ Iteration nr  3 obtained:
+ DATVAR=  999.989990 mean sqrd residual=   999.989990  RMS RESIDUAL=    31.622618
+
+ After  3 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+     0 straight and direct rays =  0.00000 [  0.00000]
+     0 refracted           rays =  0.00000 [  0.00000]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+     0 ALL                 RAYS =  0.00000 [  0.00000]        0.00 %
+
+ ~~~ iteration done; output results ...
+
+  eq       ot     x      y      z      rms    avres   dot     dx     dy     dz
+    1      9.108422.20 111.92  23.10   0.00   0.00    0.000  0.000  0.000  0.000
+    2      9.308425.70 110.58  22.80   0.00   0.00    0.000  0.000  0.000  0.000
+    3     27.308842.98  -8.59  12.10   0.00   0.00    0.000  0.000  0.000  0.000
+    4     15.708840.46  -6.92  11.00   0.00   0.00    0.000  0.000  0.000  0.000
+    5     49.508646.71  40.73  16.50   0.00   0.00    0.000  0.000  0.000  0.000
+    6     39.708565.52  56.68  12.10   0.00   0.00    0.000  0.000  0.000  0.000
+    7     51.208461.89  94.62  15.60   0.00   0.00    0.000  0.000  0.000  0.000
+    8     46.908456.86  97.86  19.00   0.00   0.00    0.000  0.000  0.000  0.000
+    9     55.908457.59  97.52  13.90   0.00   0.00    0.000  0.000  0.000  0.000
+   10     44.708457.28  97.30  17.20   0.00   0.00    0.000  0.000  0.000  0.000
+   11     44.908459.46  95.74  18.60   0.00   0.00    0.000  0.000  0.000  0.000
+   12     22.108523.86  82.35  18.50   0.00   0.00    0.000  0.000  0.000  0.000
+   13     36.508719.92   4.46  11.20   0.00   0.00    0.000  0.000  0.000  0.000
+   14     33.308519.25  64.16  10.10   0.00   0.00    0.000  0.000  0.000  0.000
+   15     34.108485.39  82.80  14.50   0.00   0.00    0.000  0.000  0.000  0.000
+   16     25.908480.64  85.36  13.50   0.00   0.00    0.000  0.000  0.000  0.000
+   17     15.908478.65  86.37  11.60   0.00   0.00    0.000  0.000  0.000  0.000
+   18      2.008488.57  82.01   5.70   0.00   0.00    0.000  0.000  0.000  0.000
+   19     48.608691.37  23.77  22.00   0.00   0.00    0.000  0.000  0.000  0.000
+   20     27.608773.23  -3.68  10.30   0.00   0.00    0.000  0.000  0.000  0.000
+   21      0.208592.08  49.54  13.10   0.00   0.00    0.000  0.000  0.000  0.000
+   22     59.108497.80  76.21  11.50   0.00   0.00    0.000  0.000  0.000  0.000
+   23      2.908498.39  76.77  13.40   0.00   0.00    0.000  0.000  0.000  0.000
+   24     21.008496.39  77.44  14.20   0.00   0.00    0.000  0.000  0.000  0.000
+   25     50.808496.78  77.10  15.30   0.00   0.00    0.000  0.000  0.000  0.000
+   26      0.808498.27  76.21  15.60   0.00   0.00    0.000  0.000  0.000  0.000
+   27     55.408639.23  34.93  24.50   0.00   0.00    0.000  0.000  0.000  0.000
+   28     39.208784.48  -8.48   3.40   0.00   0.00    0.000  0.000  0.000  0.000
+   29     59.108495.42  77.89  15.10   0.00   0.00    0.000  0.000  0.000  0.000
+   30      5.608558.74  50.21  14.90   0.00   0.00    0.000  0.000  0.000  0.000
+   31     14.108639.61  26.22   3.90   0.00   0.00    0.000  0.000  0.000  0.000
+   32     14.608707.71  13.95  16.80   0.00   0.00    0.000  0.000  0.000  0.000
+   33     56.408494.45  79.11   5.10   0.00   0.00    0.000  0.000  0.000  0.000
+   34     34.308602.40  46.31  18.00   0.00   0.00    0.000  0.000  0.000  0.000
+   35     24.608888.10 -39.39   5.20   0.00   0.00    0.000  0.000  0.000  0.000
+   36     49.708558.86  50.55   8.30   0.00   0.00    0.000  0.000  0.000  0.000
+   37     34.108754.32  -0.78  16.10   0.00   0.00    0.000  0.000  0.000  0.000
+   38      1.008515.79  80.56  21.90   0.00   0.00    0.000  0.000  0.000  0.000
+   39     37.208513.79  81.57  23.50   0.00   0.00    0.000  0.000  0.000  0.000
+   40     35.708463.41  84.58  22.60   0.00   0.00    0.000  0.000  0.000  0.000
+   41     36.108872.11 -35.60  15.30   0.00   0.00    0.000  0.000  0.000  0.000
+   42     53.208910.73 -54.68   9.30   0.00   0.00    0.000  0.000  0.000  0.000
+   43     43.208720.59  42.96  15.50   0.00   0.00    0.000  0.000  0.000  0.000
+   44      1.008515.62  80.67  21.30   0.00   0.00    0.000  0.000  0.000  0.000
+   45     44.908517.31  67.73  15.00   0.00   0.00    0.000  0.000  0.000  0.000
+   46      0.608939.79 -55.01   0.01   0.00   0.00    0.000  0.000  0.000  0.000
+   47     18.808679.73  29.90  20.10   0.00   0.00    0.000  0.000  0.000  0.000
+   48     23.408699.75  20.64  15.50   0.00   0.00    0.000  0.000  0.000  0.000
+   49     32.808757.54  42.85  17.90   0.00   0.00    0.000  0.000  0.000  0.000
+   50     41.908742.69  -4.91  19.20   0.00   0.00    0.000  0.000  0.000  0.000
+   51     14.208423.17 105.67  20.40   0.00   0.00    0.000  0.000  0.000  0.000
+   52      5.508458.78  96.74  19.30   0.00   0.00    0.000  0.000  0.000  0.000
+   53     12.908473.18  81.90  23.10   0.00   0.00    0.000  0.000  0.000  0.000
+   54     36.208650.62  70.19  21.80   0.00   0.00    0.000  0.000  0.000  0.000
+   55     44.108447.87  93.73  16.80   0.00   0.00    0.000  0.000  0.000  0.000
+   56     41.808517.49  66.50  22.00   0.00   0.00    0.000  0.000  0.000  0.000
+   57     23.308774.33  -4.46   0.01   0.00   0.00    0.000  0.000  0.000  0.000
+   58     23.208779.06  -6.14   6.60   0.00   0.00    0.000  0.000  0.000  0.000
+   59     21.208719.91   8.82  21.00   0.00   0.00    0.000  0.000  0.000  0.000
+   60     44.108644.19  30.24  18.10   0.00   0.00    0.000  0.000  0.000  0.000
+
+ A V E R A G E   of ADJUSTMENTS :                     0.000  0.000  0.000  0.000
+ A V E R A G E   of ABSOLUTE ADJUSTMENTS :            0.000  0.000  0.000  0.000
+
+
+NO step length damping applied
+
+
+ Velocity adjustments:
+     vp    dvp      hp   reflector
+ Velocity model   1
+   4.910  0.000   -5.000      
+   5.340  0.000    0.550      
+   5.980  0.000    8.680      
+   6.980  0.000   12.890      
+   7.170  0.000   26.880      
+   7.370  0.000   31.170      
+   7.370  0.000   32.210      
+   7.530  0.000   41.470      
+   8.540  0.000   42.960      
+
+ Calculation of average velocity starts at layer #           1
+ z = -5.00 ...  0.55    v = 4.91    AVEL = 4.91 downto z =   0.55
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.17 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.36 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.07 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.20 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.23 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.46 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.49 downto z =  42.96
+
+
+ Calculation of average velocity starts at layer #           2
+ z =  0.55 ...  8.68    v = 5.34    AVEL = 5.34 downto z =   8.68
+ z =  8.68 ... 12.89    v = 5.98    AVEL = 5.56 downto z =  12.89
+ z = 12.89 ... 26.88    v = 6.98    AVEL = 6.31 downto z =  26.88
+ z = 26.88 ... 31.17    v = 7.17    AVEL = 6.43 downto z =  31.17
+ z = 31.17 ... 32.21    v = 7.37    AVEL = 6.46 downto z =  32.21
+ z = 32.21 ... 41.47    v = 7.37    AVEL = 6.67 downto z =  41.47
+ z = 41.47 ... 42.96    v = 7.53    AVEL = 6.70 downto z =  42.96
+
+
+
+ Adjusted station corrections:
+   stn  ptcor  dpcor  
+  624   0.000  0.000  628   0.000  0.000  620   0.000  0.000  622   0.000  0.000
+  630   0.000  0.000  623   0.000  0.000  627   0.000  0.000  621   0.000  0.000
+  629   0.000  0.000  625   0.000  0.000  626   0.000  0.000  631   0.000  0.000
+  632   0.000  0.000
+
+ ~~~ another iteration? ...
+ NITT = ITTMAX  --> stop iterations.
+ ~~~ final solution reached ...
+
+ ~~~ damp G & Chol.-Decomp.: NOT made (switch iresolcalc is NOT set !)
+
+ Final rms values:  0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+                    0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+                    0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+                    0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+                    0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+                    0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+
+
+
+ ~~~ output final hypocenters ...
+
+      date    origin   latitude longitude  depth  mag  no  rms      x      y      z
+ WARNING: Event-# :           1 has zero observations!
+   1 160818 1613  9.10 73.0030N 124.8570W  23.10 1.40   0 0.000 8422.20 111.92  23.10
+ WARNING: Event-# :           2 has zero observations!
+   2 160818 1613  9.30 72.9910N 124.8780W  22.80 1.10   0 0.000 8425.70 110.58  22.80
+ WARNING: Event-# :           3 has zero observations!
+   3 160819 0959 27.30 71.9230N 129.7650W  12.10 4.00   0 0.000 8842.98  -8.59  12.10
+ WARNING: Event-# :           4 has zero observations!
+   4 160820 1506 15.70 71.9380N 129.7950W  11.00 1.50   0 0.000 8840.46  -6.92  11.00
+ WARNING: Event-# :           5 has zero observations!
+   5 160822 1318 49.50 72.3650N 127.0840W  16.50 0.60   0 0.000 8646.71  40.73  16.50
+ WARNING: Event-# :           6 has zero observations!
+   6 160906 1514 39.70 72.5080N 125.6840W  12.10 0.90   0 0.000 8565.52  56.68  12.10
+ WARNING: Event-# :           7 has zero observations!
+   7 161004 0841 51.20 72.8480N 124.9640W  15.60 0.20   0 0.000 8461.89  94.62  15.60
+ WARNING: Event-# :           8 has zero observations!
+   8 161005 1619 46.90 72.8770N 125.0150W  19.00 1.00   0 0.000 8456.86  97.86  19.00
+ WARNING: Event-# :           9 has zero observations!
+   9 161006 0156 55.90 72.8740N 125.0160W  13.90 1.00   0 0.000 8457.59  97.52  13.90
+ WARNING: Event-# :          10 has zero observations!
+  10 161009 0036 44.70 72.8720N 124.9930W  17.20 1.30   0 0.000 8457.28  97.30  17.20
+ WARNING: Event-# :          11 has zero observations!
+  11 161009 0036 44.90 72.8580N 124.9610W  18.60 1.20   0 0.000 8459.46  95.74  18.60
+ WARNING: Event-# :          12 has zero observations!
+  12 161012 0800 22.10 72.7380N 126.0390W  18.50 0.80   0 0.000 8523.86  82.35  18.50
+ WARNING: Event-# :          13 has zero observations!
+  13 161015 1013 36.50 72.0400N 126.9980W  11.20 0.70   0 0.000 8719.92   4.46  11.20
+ WARNING: Event-# :          14 has zero observations!
+  14 161021 0507 33.30 72.5750N 124.7820W  10.10 0.80   0 0.000 8519.25  64.16  10.10
+ WARNING: Event-# :          15 has zero observations!
+  15 161125 0156 34.10 72.7420N 124.9290W  14.50 0.60   0 0.000 8485.39  82.80  14.50
+ WARNING: Event-# :          16 has zero observations!
+  16 161125 0517 25.90 72.7650N 124.9470W  13.50 1.60   0 0.000 8480.64  85.36  13.50
+ WARNING: Event-# :          17 has zero observations!
+  17 161125 0525 15.90 72.7740N 124.9500W  11.60 0.80   0 0.000 8478.65  86.37  11.60
+ WARNING: Event-# :          18 has zero observations!
+  18 161125 0556  2.00 72.7350N 124.9750W   5.70 0.20   0 0.000 8488.57  82.01   5.70
+ WARNING: Event-# :          19 has zero observations!
+  19 170117 0846 48.60 72.2130N 127.3470W  22.00 0.30   0 0.000 8691.37  23.77  22.00
+ WARNING: Event-# :          20 has zero observations!
+  20 170122 1614 27.60 71.9670N 128.0470W  10.30 0.90   0 0.000 8773.23  -3.68  10.30
+ WARNING: Event-# :          21 has zero observations!
+  21 170125 2244  0.20 72.4440N 126.0250W  13.10 0.80   0 0.000 8592.08  49.54  13.10
+ WARNING: Event-# :          22 has zero observations!
+  22 170302 1359 59.10 72.6830N 124.8900W  11.50 0.50   0 0.000 8497.80  76.21  11.50
+ WARNING: Event-# :          23 has zero observations!
+  23 170304 2135  2.90 72.6880N 124.9420W  13.40 1.30   0 0.000 8498.39  76.77  13.40
+ WARNING: Event-# :          24 has zero observations!
+  24 170307 0447 21.00 72.6940N 124.9240W  14.20 1.70   0 0.000 8496.39  77.44  14.20
+ WARNING: Event-# :          25 has zero observations!
+  25 170307 2016 50.80 72.6910N 124.9150W  15.30 1.10   0 0.000 8496.78  77.10  15.30
+ WARNING: Event-# :          26 has zero observations!
+  26 170309 1454  0.80 72.6830N 124.9040W  15.60 0.30   0 0.000 8498.27  76.21  15.60
+ WARNING: Event-# :          27 has zero observations!
+  27 170311 0430 55.40 72.3130N 126.5090W  24.50 0.30   0 0.000 8639.23  34.93  24.50
+ WARNING: Event-# :          28 has zero observations!
+  28 170312 0416 39.20 71.9240N 128.0800W   3.40 2.10   0 0.000 8784.48  -8.48   3.40
+ WARNING: Event-# :          29 has zero observations!
+  29 170313 0553 59.10 72.6980N 124.9230W  15.10 1.00   0 0.000 8495.42  77.89  15.10
+ WARNING: Event-# :          30 has zero observations!
+  30 170313 0809  5.60 72.4500N 125.0880W  14.90 1.20   0 0.000 8558.74  50.21  14.90
+ WARNING: Event-# :          31 has zero observations!
+  31 170317 1007 14.10 72.2350N 125.9880W   3.90 0.50   0 0.000 8639.61  26.22   3.90
+ WARNING: Event-# :          32 has zero observations!
+  32 170320 0711 14.60 72.1250N 127.2220W  16.80 0.90   0 0.000 8707.71  13.95  16.80
+ WARNING: Event-# :          33 has zero observations!
+  33 170320 0853 56.40 72.7090N 124.9700W   5.10 0.40   0 0.000 8494.45  79.11   5.10
+ WARNING: Event-# :          34 has zero observations!
+  34 170320 1900 34.30 72.4150N 126.1290W  18.00 0.60   0 0.000 8602.40  46.31  18.00
+ WARNING: Event-# :          35 has zero observations!
+  35 170323 0519 24.60 71.6470N 129.1860W   5.20 1.20   0 0.000 8888.10 -39.39   5.20
+ WARNING: Event-# :          36 has zero observations!
+  36 170323 1612 49.70 72.4530N 125.1120W   8.30 0.50   0 0.000 8558.86  50.55   8.30
+ WARNING: Event-# :          37 has zero observations!
+  37 170326 0836 34.10 71.9930N 127.6760W  16.10 1.50   0 0.000 8754.32  -0.78  16.10
+ WARNING: Event-# :          38 has zero observations!
+  38 170402 0422  1.00 72.7220N 125.6900W  21.90 1.20   0 0.000 8515.79  80.56  21.90
+ WARNING: Event-# :          39 has zero observations!
+  39 170402 0636 37.20 72.7310N 125.6930W  23.50 0.70   0 0.000 8513.79  81.57  23.50
+ WARNING: Event-# :          40 has zero observations!
+  40 170404 2347 35.70 72.7580N 124.3890W  22.60 0.50   0 0.000 8463.41  84.58  22.60
+ WARNING: Event-# :          41 has zero observations!
+  41 170405 0307 36.10 71.6810N 128.9570W  15.30 1.00   0 0.000 8872.11 -35.60  15.30
+ WARNING: Event-# :          42 has zero observations!
+  42 170405 1410 53.20 71.5100N 128.9090W   9.30 1.70   0 0.000 8910.73 -54.68   9.30
+ WARNING: Event-# :          43 has zero observations!
+  43 170406 0838 43.20 72.3850N 129.3850W  15.50 0.90   0 0.000 8720.59  42.96  15.50
+ WARNING: Event-# :          44 has zero observations!
+  44 170406 1728  1.00 72.7230N 125.6920W  21.30 0.90   0 0.000 8515.62  80.67  21.30
+ WARNING: Event-# :          45 has zero observations!
+  45 170408 1004 44.90 72.6070N 124.9440W  15.00 1.40   0 0.000 8517.31  67.73  15.00
+ WARNING: Event-# :          46 has zero observations!
+  46 170412 1507  0.60 71.5070N 129.7200W   0.01 0.70   0 0.000 8939.79 -55.01   0.01
+ WARNING: Event-# :          47 has zero observations!
+  47 170414 0459 18.80 72.2680N 127.3840W  20.10 0.50   0 0.000 8679.73  29.90  20.10
+ WARNING: Event-# :          48 has zero observations!
+  48 170414 1656 23.40 72.1850N 127.4000W  15.50 0.20   0 0.000 8699.75  20.64  15.50
+ WARNING: Event-# :          49 has zero observations!
+  49 170414 1753 32.80 72.3840N 130.4600W  17.90 0.70   0 0.000 8757.54  42.85  17.90
+ WARNING: Event-# :          50 has zero observations!
+  50 170416 0523 41.90 71.9560N 127.0880W  19.20 1.60   0 0.000 8742.69  -4.91  19.20
+ WARNING: Event-# :          51 has zero observations!
+  51 170416 1220 14.20 72.9470N 124.4980W  20.40 1.00   0 0.000 8423.17 105.67  20.40
+ WARNING: Event-# :          52 has zero observations!
+  52 170416 1821  5.50 72.8670N 125.0030W  19.30 1.30   0 0.000 8458.78  96.74  19.30
+ WARNING: Event-# :          53 has zero observations!
+  53 170418 1500 12.90 72.7340N 124.5130W  23.10 1.30   0 0.000 8473.18  81.90  23.10
+ WARNING: Event-# :          54 has zero observations!
+  54 170420 1302 36.20 72.6290N 129.0250W  21.80 0.90   0 0.000 8650.62  70.19  21.80
+ WARNING: Event-# :          55 has zero observations!
+  55 170423 1455 44.10 72.8400N 124.4930W  16.80 0.60   0 0.000 8447.87  93.73  16.80
+ WARNING: Event-# :          56 has zero observations!
+  56 170423 2313 41.80 72.5960N 124.8740W  22.00 1.30   0 0.000 8517.49  66.50  22.00
+ WARNING: Event-# :          57 has zero observations!
+  57 170425 0652 23.30 71.9600N 128.0310W   0.01 1.20   0 0.000 8774.33  -4.46   0.01
+ WARNING: Event-# :          58 has zero observations!
+  58 170426 0051 23.20 71.9450N 128.0660W   6.60 0.70   0 0.000 8779.06  -6.14   6.60
+ WARNING: Event-# :          59 has zero observations!
+  59 170426 1425 21.20 72.0790N 127.2630W  21.00 0.10   0 0.000 8719.91   8.82  21.00
+ WARNING: Event-# :          60 has zero observations!
+  60 170426 1840 44.10 72.2710N 126.3670W  18.10 1.30   0 0.000 8644.19  30.24  18.10
+
+ ~~~ output final station residuals ...
+ TURBO-option is set; residuals are NOT printed for each event!
+
+
+
+   station statistics, remember nsp was set to: 1
+
+
+ sta phase nobs avres  avwres    std    wsum    delay
+
+
+
+ ~~~ output statistics ...
+
+
+
+
+ RAY-STATISTICS FOR  L A S T  ITERATION
+ --------------------------------------
+
+ NHYP : nr of hypocenters in this layer
+ NREF : nr of headwaves in this layer
+ %len : % of "refracted km" in this layer 
+        with respect to all refracted kilometers
+ NHIT : nr of rays passed thru this layer
+ xy-km: average horizontal ray length [km] in layer
+ z-km : average  vertical  ray length [km] in layer
+ RFLX : number of reflections at bottom of this layer
+
+ nlay   top ..... bottom     velocity   NHYP NREF %len  NHIT xy-km  z-km  RFLX
+
+   1     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   2     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   3     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   4     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   5     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   6     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   7     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   8     0.00...  0.00 km    0.00 km/s    0    0   0.0     0   0.0   0.0     0
+   9     0.00...       km    0.00 km/s   60    0   0.0     0   0.0   0.0
+
+ Total nr of events was   60
+
+ Total nr of refracted rays =     0
+ Total nr of reflected rays =     0
+ Total nr of   other   rays =     0
+                              ------
+ Total nr of    all    rays =     0
+
+ Average (absolute) error of the raytracers:
+  Straight and direct rays :    0.00 meters
+  Refracted           rays :    0.00 meters
+  Reflected           rays :    0.00 meters
+
+
+ ALL RAYS TOGETHER:
+ Average horizontal ray length =    NaN km   (Hypocenter --> Station) 
+ Average  vertical  ray length =    NaN km   (Deepest ray-point --> Station)
+
+
+
+ ... and some more STATISTICS 
+ ---------------------------- 
+  GAP of final epicenters:
+
+  Event# -> GAP  Event# -> GAP  Event# -> GAP  Event# -> GAP  Event# -> GAP
+       1 ->   0       2 ->   0       3 ->   0       4 ->   0       5 ->   0
+       6 ->   0       7 ->   0       8 ->   0       9 ->   0      10 ->   0
+      11 ->   0      12 ->   0      13 ->   0      14 ->   0      15 ->   0
+      16 ->   0      17 ->   0      18 ->   0      19 ->   0      20 ->   0
+      21 ->   0      22 ->   0      23 ->   0      24 ->   0      25 ->   0
+      26 ->   0      27 ->   0      28 ->   0      29 ->   0      30 ->   0
+      31 ->   0      32 ->   0      33 ->   0      34 ->   0      35 ->   0
+      36 ->   0      37 ->   0      38 ->   0      39 ->   0      40 ->   0
+      41 ->   0      42 ->   0      43 ->   0      44 ->   0      45 ->   0
+      46 ->   0      47 ->   0      48 ->   0      49 ->   0      50 ->   0
+      51 ->   0      52 ->   0      53 ->   0      54 ->   0      55 ->   0
+      56 ->   0      57 ->   0      58 ->   0      59 ->   0      60 ->   0
+
+ GAPs were between   0 and   0
+      (average GAP was   0)
+
+
+
+  MAGNITUDES of INPUT-DATA:
+
+ Magnitude (# of events)   ***average number of obs***
+
+ MAG<= 1.0 ( 37)  
+ MAG = 1.1 (  2)  
+ MAG = 1.2 (  5)  
+ MAG = 1.3 (  6)  
+ MAG = 1.4 (  2)  
+ MAG = 1.5 (  2)  
+ MAG = 1.6 (  2)  
+ MAG = 1.7 (  2)  
+ MAG = 1.8 (  0)  
+ MAG = 1.9 (  0)  
+ MAG = 2.0 (  0)  
+ MAG = 2.1 (  1)  
+ MAG = 2.2 (  0)  
+ MAG = 2.3 (  0)  
+ MAG = 2.4 (  0)  
+ MAG = 2.5 (  0)  
+ MAG = 2.6 (  0)  
+ MAG = 2.7 (  0)  
+ MAG = 2.8 (  0)  
+ MAG = 2.9 (  0)  
+ MAG = 3.0 (  0)  
+ MAG = 3.1 (  0)  
+ MAG = 3.2 (  0)  
+ MAG = 3.3 (  0)  
+ MAG = 3.4 (  0)  
+ MAG = 3.5 (  0)  
+ MAG = 3.6 (  0)  
+ MAG = 3.7 (  0)  
+ MAG = 3.8 (  0)  
+ MAG = 3.9 (  0)  
+ MAG = 4.0 (  1)  
+ MAG = 4.1 (  0)  
+ MAG = 4.2 (  0)  
+ MAG = 4.3 (  0)  
+ MAG = 4.4 (  0)  
+ MAG = 4.5 (  0)  
+ MAG = 4.6 (  0)  
+ MAG = 4.7 (  0)  
+ MAG = 4.8 (  0)  
+ MAG = 4.9 (  0)  
+ MAG = 5.0 (  0)  
+ MAG = 5.1 (  0)  
+ MAG = 5.2 (  0)  
+ MAG = 5.3 (  0)  
+ MAG = 5.4 (  0)  
+ MAG = 5.5 (  0)  
+ MAG = 5.6 (  0)  
+ MAG = 5.7 (  0)  
+ MAG = 5.8 (  0)  
+ MAG = 5.9 (  0)  
+ MAG>= 6.0 (  0)  
+
+
+
+
+
+  DEPTHs of INPUT-DATA and of LAST ITERATION:
+  ===========================================
+
+       Depth       # of events  
+
+ DEPTH ( input ) =  -4. km :   
+ DEPTH (last_IT) =  -4. km :   
+ DEPTH ( input ) =  -3. km :   
+ DEPTH (last_IT) =  -3. km :   
+ DEPTH ( input ) =  -2. km :   
+ DEPTH (last_IT) =  -2. km :   
+ DEPTH ( input ) =  -1. km :   
+ DEPTH (last_IT) =  -1. km :   
+ DEPTH ( input ) =   0. km :  ..
+ DEPTH (last_IT) =   0. km :  **
+ DEPTH ( input ) =   1. km :   
+ DEPTH (last_IT) =   1. km :   
+ DEPTH ( input ) =   2. km :   
+ DEPTH (last_IT) =   2. km :   
+ DEPTH ( input ) =   3. km :  .
+ DEPTH (last_IT) =   3. km :  *
+ DEPTH ( input ) =   4. km :  .
+ DEPTH (last_IT) =   4. km :  *
+ DEPTH ( input ) =   5. km :  ..
+ DEPTH (last_IT) =   5. km :  **
+ DEPTH ( input ) =   6. km :  .
+ DEPTH (last_IT) =   6. km :  *
+ DEPTH ( input ) =   7. km :  .
+ DEPTH (last_IT) =   7. km :  *
+ DEPTH ( input ) =   8. km :  .
+ DEPTH (last_IT) =   8. km :  *
+ DEPTH ( input ) =   9. km :  .
+ DEPTH (last_IT) =   9. km :  *
+ DEPTH ( input ) =  10. km :  ..
+ DEPTH (last_IT) =  10. km :  **
+ DEPTH ( input ) =  11. km :  ..
+ DEPTH (last_IT) =  11. km :  **
+ DEPTH ( input ) =  12. km :  ....
+ DEPTH (last_IT) =  12. km :  ****
+ DEPTH ( input ) =  13. km :  ..
+ DEPTH (last_IT) =  13. km :  **
+ DEPTH ( input ) =  14. km :  ...
+ DEPTH (last_IT) =  14. km :  ***
+ DEPTH ( input ) =  15. km :  ......
+ DEPTH (last_IT) =  15. km :  ******
+ DEPTH ( input ) =  16. km :  .....
+ DEPTH (last_IT) =  16. km :  *****
+ DEPTH ( input ) =  17. km :  ....
+ DEPTH (last_IT) =  17. km :  ****
+ DEPTH ( input ) =  18. km :  ...
+ DEPTH (last_IT) =  18. km :  ***
+ DEPTH ( input ) =  19. km :  .....
+ DEPTH (last_IT) =  19. km :  *****
+ DEPTH ( input ) =  20. km :  ..
+ DEPTH (last_IT) =  20. km :  **
+ DEPTH ( input ) =  21. km :  ..
+ DEPTH (last_IT) =  21. km :  **
+ DEPTH ( input ) =  22. km :  ....
+ DEPTH (last_IT) =  22. km :  ****
+ DEPTH ( input ) =  23. km :  ....
+ DEPTH (last_IT) =  23. km :  ****
+ DEPTH ( input ) =  24. km :  .
+ DEPTH (last_IT) =  24. km :  *
+ DEPTH ( input ) =  25. km :  .
+ DEPTH (last_IT) =  25. km :  *
+ DEPTH ( input ) =  26. km :   
+ DEPTH (last_IT) =  26. km :   
+ DEPTH ( input ) =  27. km :   
+ DEPTH (last_IT) =  27. km :   
+ DEPTH ( input ) =  28. km :   
+ DEPTH (last_IT) =  28. km :   
+ DEPTH ( input ) =  29. km :   
+ DEPTH (last_IT) =  29. km :   
+ DEPTH ( input ) =  30. km :   
+ DEPTH (last_IT) =  30. km :   
+ DEPTH ( input ) =  31. km :   
+ DEPTH (last_IT) =  31. km :   
+ DEPTH ( input ) =  32. km :   
+ DEPTH (last_IT) =  32. km :   
+ DEPTH ( input ) =  33. km :   
+ DEPTH (last_IT) =  33. km :   
+ DEPTH ( input ) =  34. km :   
+ DEPTH (last_IT) =  34. km :   
+ DEPTH ( input ) =  35. km :   
+ DEPTH (last_IT) =  35. km :   
+ DEPTH ( input ) =  36. km :   
+ DEPTH (last_IT) =  36. km :   
+ DEPTH ( input ) =  37. km :   
+ DEPTH (last_IT) =  37. km :   
+ DEPTH ( input ) =  38. km :   
+ DEPTH (last_IT) =  38. km :   
+ DEPTH ( input ) =  39. km :   
+ DEPTH (last_IT) =  39. km :   
+ DEPTH ( input ) =  40. km :   
+ DEPTH (last_IT) =  40. km :   
+ DEPTH ( input ) =  41. km :   
+ DEPTH (last_IT) =  41. km :   
+ DEPTH ( input ) =  42. km :   
+ DEPTH (last_IT) =  42. km :   
+ DEPTH ( input ) =  43. km :   
+ DEPTH (last_IT) =  43. km :   
+ DEPTH ( input ) =  44. km :   
+ DEPTH (last_IT) =  44. km :   
+ DEPTH ( input ) =  45. km :   
+ DEPTH (last_IT) =  45. km :   
+ DEPTH ( input ) =  46. km :   
+ DEPTH (last_IT) =  46. km :   
+ DEPTH ( input ) =  47. km :   
+ DEPTH (last_IT) =  47. km :   
+ DEPTH ( input ) =  48. km :   
+ DEPTH (last_IT) =  48. km :   
+ DEPTH ( input ) =  49. km :   
+ DEPTH (last_IT) =  49. km :   
+ DEPTH ( input ) =  50. km :   
+ DEPTH (last_IT) =  50. km :   
+ DEPTH ( input ) =  51. km :   
+ DEPTH (last_IT) =  51. km :   
+ DEPTH ( input ) =  52. km :   
+ DEPTH (last_IT) =  52. km :   
+ DEPTH ( input ) =  53. km :   
+ DEPTH (last_IT) =  53. km :   
+ DEPTH ( input ) =  54. km :   
+ DEPTH (last_IT) =  54. km :   
+ DEPTH ( input ) =  55. km :   
+ DEPTH (last_IT) =  55. km :   
+ DEPTH ( input ) =  56. km :   
+ DEPTH (last_IT) =  56. km :   
+ DEPTH ( input ) =  57. km :   
+ DEPTH (last_IT) =  57. km :   
+ DEPTH ( input ) =  58. km :   
+ DEPTH (last_IT) =  58. km :   
+ DEPTH ( input ) =  59. km :   
+ DEPTH (last_IT) =  59. km :   
+ DEPTH ( input ) =  60. km :   
+ DEPTH (last_IT) =  60. km :   
+ DEPTH ( input ) =  61. km :   
+ DEPTH (last_IT) =  61. km :   
+ DEPTH ( input ) =  62. km :   
+ DEPTH (last_IT) =  62. km :   
+ DEPTH ( input ) =  63. km :   
+ DEPTH (last_IT) =  63. km :   
+ DEPTH ( input ) =  64. km :   
+ DEPTH (last_IT) =  64. km :   
+ DEPTH ( input ) =  65. km :   
+ DEPTH (last_IT) =  65. km :   
+ DEPTH ( input ) =  66. km :   
+ DEPTH (last_IT) =  66. km :   
+ DEPTH ( input ) =  67. km :   
+ DEPTH (last_IT) =  67. km :   
+ DEPTH ( input ) =  68. km :   
+ DEPTH (last_IT) =  68. km :   
+ DEPTH ( input ) =  69. km :   
+ DEPTH (last_IT) =  69. km :   
+ DEPTH ( input ) =  70. km :   
+ DEPTH (last_IT) =  70. km :   
+ DEPTH ( input ) =  71. km :   
+ DEPTH (last_IT) =  71. km :   
+ DEPTH ( input ) =  72. km :   
+ DEPTH (last_IT) =  72. km :   
+ DEPTH ( input ) =  73. km :   
+ DEPTH (last_IT) =  73. km :   
+ DEPTH ( input ) =  74. km :   
+ DEPTH (last_IT) =  74. km :   
+ DEPTH ( input ) =  75. km :   
+ DEPTH (last_IT) =  75. km :   
+ DEPTH ( input ) =  76. km :   
+ DEPTH (last_IT) =  76. km :   
+ DEPTH ( input ) =  77. km :   
+ DEPTH (last_IT) =  77. km :   
+ DEPTH ( input ) =  78. km :   
+ DEPTH (last_IT) =  78. km :   
+ DEPTH ( input ) =  79. km :   
+ DEPTH (last_IT) =  79. km :   
+ DEPTH ( input ) =  80. km :   
+ DEPTH (last_IT) =  80. km :   
+ DEPTH ( input ) =  81. km :   
+ DEPTH (last_IT) =  81. km :   
+ DEPTH ( input ) =  82. km :   
+ DEPTH (last_IT) =  82. km :   
+ DEPTH ( input ) =  83. km :   
+ DEPTH (last_IT) =  83. km :   
+ DEPTH ( input ) =  84. km :   
+ DEPTH (last_IT) =  84. km :   
+ DEPTH ( input ) =  85. km :   
+ DEPTH (last_IT) =  85. km :   
+ DEPTH ( input ) =  86. km :   
+ DEPTH (last_IT) =  86. km :   
+ DEPTH ( input ) =  87. km :   
+ DEPTH (last_IT) =  87. km :   
+ DEPTH ( input ) =  88. km :   
+ DEPTH (last_IT) =  88. km :   
+ DEPTH ( input ) =  89. km :   
+ DEPTH (last_IT) =  89. km :   
+ DEPTH ( input ) =  90. km :   
+ DEPTH (last_IT) =  90. km :   
+ DEPTH ( input ) =  91. km :   
+ DEPTH (last_IT) =  91. km :   
+ DEPTH ( input ) =  92. km :   
+ DEPTH (last_IT) =  92. km :   
+ DEPTH ( input ) =  93. km :   
+ DEPTH (last_IT) =  93. km :   
+ DEPTH ( input ) =  94. km :   
+ DEPTH (last_IT) =  94. km :   
+ DEPTH ( input ) =  95. km :   
+ DEPTH (last_IT) =  95. km :   
+ DEPTH ( input ) =  96. km :   
+ DEPTH (last_IT) =  96. km :   
+ DEPTH ( input ) =  97. km :   
+ DEPTH (last_IT) =  97. km :   
+ DEPTH ( input ) =  98. km :   
+ DEPTH (last_IT) =  98. km :   
+ DEPTH ( input ) =  99. km :   
+ DEPTH (last_IT) =  99. km :   
+ DEPTH ( input ) = 100. km :   
+ DEPTH (last_IT) = 100. km :   
+ DEPTH ( input ) > 100. km :   
+ DEPTH (last_IT) > 100. km :   
+
+
+ Residuals of the stations according to the azimuth:
+ (RES  = total average residual at station)
+ (RES1 = average residual of rays from 1st quadrant)
+ (RES2 = average residual of rays from 2nd quadrant)
+ (RES3 = average residual of rays from 3rd quadrant)
+ (RES4 = average residual of rays from 4th quadrant)
+
+ Stn#  Stn     RES          RES1         RES2         RES3         RES4
+   1   624  -.-
+   2   628  -.-
+   3   620  -.-
+   4   622  -.-
+   5   630  -.-
+   6   623  -.-
+   7   627  -.-
+   8   621  -.-
+   9   629  -.-
+  10   625  -.-
+  11   626  -.-
+  12   631  -.-
+  13   632  -.-
+
+
+
+ CPU - statistics:
+
+ TOTAL CPU-sec          =    0.1     (CPU-minutes:  0.002)
+
+ >>>   End of program VELEST at 25-06-18 15:49       <<< [ CPU-sec :     0.1]

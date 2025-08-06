@@ -1,0 +1,1716 @@
+ >>> Start of program VELEST at 25-06-02 16:13       <<<                        
+
+ ::::::::::::::::::::::::::::::::::::::                                         
+  V E L E S T  - Version : January 3, 1995                                      
+  (Authors: see source code)                                                    
+ ::::::::::::::::::::::::::::::::::::::                                         
+
+
+ Title of this VELEST run:
+
+ vinnik_2
+ --------
+
+
+ Current array-dimensions of program VELEST:
+
+ Max. number of EARTHQUAKES for simult. inversion IEQ = ***
+ Max. number of SHOTS for simult. inversion    INSHOT =  50
+ Max. number of (different) 1D-MODELS      ITOTMODELS =   2
+ Max. number of LAYERS per one 1D-model        INLTOT = 100
+ Max. number of STATIONS in stationlist           IST = 650
+ Max. number of OBSERVATIONS per event MAXOBSPEREVENT = 180
+
+
+
+
+
+
+    INPUT - P A R A M E T E R S :
+
+
+
+***
+***  olat       olon   icoordsystem      zshift   itrial ztrial    ised
+  72.000000-126.000000      0            0.000       0     0.00      0
+***
+*** neqs   nshot    rotate
+     91      0      0.0
+***
+*** isingle   iresolcalc
+       0          0
+***
+*** dmax    itopo    zmin     veladj    zadj   lowveloclay
+   300.00     0      0.01       0.20    5.00       0
+***
+*** nsp    swtfac   vpvs       nmod
+     1      1.00    1.730        1
+***
+***   othet   xythet    zthet    vthet   stathet
+       0.01     0.01     0.01     1.00     0.01
+***
+*** nsinv   nshcor   nshfix     iuseelev    iusestacorr
+       1       0       0           1            1
+***
+*** iturbo    icnvout   istaout   ismpout
+       1         1         1         0
+***
+*** irayout   idrvout   ialeout   idspout   irflout   irfrout   iresout
+       0         0         0         0         0         0         0
+***
+*** delmin   ittmax   invertratio
+    0.010       3          1
+***
+*** Modelfile:
+tmp/vinnik_2/synthvel/model_998.mod
+***
+*** Stationfile:
+./velinp/station.sta
+***
+*** Seismofile:
+ 
+***
+*** File with region names:
+ 
+***
+*** File with region coordinates:
+ 
+***
+*** File #1 with topo data:
+ 
+***
+*** File #2 with topo data:
+ 
+***
+*** DATA INPUT files:
+***
+*** File with Earthquake data:
+./velinp/data.cnv
+***
+*** File with Shot data:
+ 
+***
+*** OUTPUT files:
+***
+*** Main print output file:
+./velout/vinnik_2/velest998.out
+***
+*** File with single event locations:
+velout.vel
+***
+*** File with final hypocenters in *.cnv format:
+./velout/vinnik_2/final_loc998.cnv
+***
+*** File with new station corrections:
+./velout/vinnik_2/stations_corr998.sta
+***
+*** File with summary cards (e.g. for plotting):
+velout.smp
+***
+*** File with raypoints:
+velout.ray
+***
+*** File with derivatives:
+velout.drv
+***
+*** File with ALEs:
+velout.ale
+***
+*** File with Dirichlet spreads:
+velout.dspr
+***
+*** File with reflection points:
+velout.rfl
+***
+*** File with refraction points:
+velout.rfr
+***
+*** File with residuals:
+velout.res
+***
+
+
+
+
+ Origin of cartesian coordinates:
+        72.00000N   126.00000E
+
+  X,Y-AXES rotated clockwise from North
+           Rotation angle (rotate):
+            rotate=    0.0 degr.
+
+ icoordsystem =            0
+ normal SHORT DISTANCE CONVERSION will be made
+ x is positive towards west, y is positive towards north
+
+
+ SHORT DISTANCE CONVERSION on ELLIPSOIDE of WORLD GEODETIC SYSTEM 1972 (WGS72)
+ =============================================================================
+
+ Radius at equator (REARTH)= 6378.13500  km
+   1. / (ellipticity)      =    298.260
+
+ Origin of cartesian coordinates [degrees]:
+   72.0000000 N     -126.0000000 W
+
+  Rotation angle (in degr.) clockwise from
+North  rotate=    0.0
+
+ Radius of sphere at OLAT =   6358.817 km
+
+ Conversion of GEOGRAPHICAL LATITUDE to GEOCENTRICAL LATITUDE:
+ RLATC = TAN(GEOCENTR.LAT) / TAN(GEOGRAPH.LAT)
+ RLATC =   0.99333486
+
+          Short distance conversions:
+          one min lat ~  1.8597 km 
+          one min lon ~  0.5751 km 
+
+
+
+
+
+
+
+    INPUT - M O D E L :
+
+
+
+ Model(s) read from file :
+ tmp/vinnik_2/synthvel/model_998.mod                                             
+
+ model file title: 
+Model: model_998.mod                    
+ Velocity structure for model   1 :
+
+ layer    vel   depth   vdamp  reflector
+   1      4.64  -5.00    1.00         P-VELOCITY MODEL                  
+   2      4.71   3.01    1.00  
+   3      6.23   8.02    1.00  
+   4      6.45  13.04    1.00  
+   5      6.71  21.02    1.00  
+   6      7.04  24.88    1.00  
+   7      7.78  36.71    1.00  
+   8      8.69  40.90    1.00  
+   9      9.22  41.08    1.00  
+
+ Calculation of average velocity starts at layer #            1
+ z = -5.00 ...  3.01    v = 4.64    AVEL = 4.64 downto z =   3.01
+ z =  3.01 ...  8.02    v = 4.71    AVEL = 4.67 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.23    AVEL = 5.10 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.45    AVEL = 5.52 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.71    AVEL = 5.67 downto z =  24.88
+ z = 24.88 ... 36.71    v = 7.04    AVEL = 6.06 downto z =  36.71
+ z = 36.71 ... 40.90    v = 7.78    AVEL = 6.22 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.69    AVEL = 6.23 downto z =  41.08
+
+
+ Calculation of average velocity starts at layer #            2
+ z =  3.01 ...  8.02    v = 4.71    AVEL = 4.71 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.23    AVEL = 5.47 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.45    AVEL = 5.90 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.71    AVEL = 6.05 downto z =  24.88
+ z = 24.88 ... 36.71    v = 7.04    AVEL = 6.40 downto z =  36.71
+ z = 36.71 ... 40.90    v = 7.78    AVEL = 6.55 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.69    AVEL = 6.56 downto z =  41.08
+
+
+
+
+
+
+    INPUT - S T A T I O N S :
+
+
+
+ Station-parameters read from file :
+ ./velinp/station.sta                                                            
+
+
+     stn latitude longitude elev   x      y      z     ptcor stcor model icc
+   1 624 72.4760N126.2750E     0  -9.37  53.11  -0.00   0.00  0.00   1  13
+   2 628 72.4000N127.1470E     0 -39.15  44.63  -0.00   0.00  0.00   1  12
+   3 630 72.0750N128.3250E     0 -80.06   8.37  -0.00   0.00  0.00   1  11
+   4 627 72.1170N126.9820E     0 -33.78  13.06  -0.00   0.00  0.00   1  10
+   5 621 72.1840N124.8890E     0  38.14  20.53  -0.00   0.00  0.00   1   9
+   6 629 71.9290N127.3130E     0 -45.39  -7.92  -0.00   0.00  0.00   1   8
+   7 622 72.4420N125.3130E     0  23.42  49.32  -0.00   0.00  0.00   1   7
+   8 620 72.6540N124.3470E     0  56.03  72.98  -0.00   0.00  0.00   1   6
+   9 623 72.3260N125.7600E     0   8.21  36.38  -0.00   0.00  0.00   1   5
+  10 626 71.8880N126.0360E     0  -1.25 -12.50  -0.00   0.00  0.00   1   4
+  11 625 72.1740N126.1070E     0  -3.67  19.42  -0.00   0.00  0.00   1   3
+  12 631 71.3990N127.2470E     0 -43.72 -67.06  -0.00   0.00  0.00   1   2
+  13 632 71.5740N129.0728E     0-107.23 -47.53  -0.00   0.00  0.00   1   1
+
+ NO Seismo-parameter-file specified
+ --> NO magnitudes calculated!
+
+
+
+
+   neqs=   91  nshot=    0  nltot=    9
+
+ ~~~ input parameters read.
+ ~~~ set units for first iteration ...
+ ~~~ determine number of unknowns ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  373
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ reset G and RHT ...
+ ~~~ input data, raytracing, setup G ...
+
+
+
+
+
+
+    I N P U T - D A T A  
+
+  eq    origin-time    latitude longitude depth    x      y      z    mag ifxOBS
+   1 160818 1613  9.10 73.0030N 124.8500E  23.10  38.61 111.92  23.10 1.40 0   6
+   2 160818 1613  9.30 72.9910N 124.8700E  22.80  37.95 110.58  22.80 1.10 0   6
+   3 160819 0959 27.30 71.9230N 129.7600E  12.10-130.00  -8.59  12.10 4.00 0  12
+   4 160820 1506 15.70 71.9380N 129.7900E  11.00-130.98  -6.92  11.00 1.50 0   9
+   5 160820 1904 45.70 72.3480N 127.1800E  23.80 -40.33  38.83  23.80 1.20 0   6
+   6 160822 1318 49.50 72.3650N 127.0800E  16.50 -36.90  40.73  16.50 0.60 0   8
+   7 160823 0652 14.00 70.9330N 129.8100E   6.40-135.21-119.06   6.40 2.90 0   6
+   8 160824 1510 30.40 71.6070N 130.0400E   8.60-140.86 -43.85   8.60 1.50 0   9
+   9 160906 1514 39.70 72.5080N 125.6800E  12.10  10.89  56.68  12.10 0.90 0   6
+ WARNING:
+ epicentral distance: 303.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 338.2 > dmax ( 300.0) ==> skipping phase !
+  10 160920 1607 18.30 69.2370N 128.3500E  16.20 -87.07-308.31  16.20 2.60 0   2
+ WARNING:
+ epicentral distance: 318.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 355.0 > dmax ( 300.0) ==> skipping phase !
+  11 160925 1911  5.60 69.2250N 127.6800E  15.60 -62.26-309.64  15.60 2.30 0   2
+  12 161004 0841 51.20 72.8480N 124.9600E  15.60  35.07  94.62  15.60 0.20 0   6
+  13 161005 1619 46.90 72.8770N 125.0100E  19.00  33.35  97.86  19.00 1.00 0   9
+  14 161006 0156 55.90 72.8740N 125.0100E  13.90  33.36  97.52  13.90 1.00 0   7
+  15 161009 0036 44.70 72.8720N 124.9900E  17.20  34.03  97.30  17.20 1.30 0   8
+  16 161009 0036 44.90 72.8580N 124.9600E  18.60  35.06  95.74  18.60 1.20 0   7
+  17 161012 0800 22.10 72.7380N 126.0300E  18.50  -1.01  82.35  18.50 0.80 0   7
+  18 161015 1013 36.50 72.0400N 126.9900E  11.20 -34.12   4.46  11.20 0.70 0   7
+  19 161021 0507 33.30 72.5750N 124.7800E  10.10  41.44  64.16  10.10 0.80 0   6
+  20 161124 2250 46.00 72.7630N 124.8800E  16.20  37.85  85.14  16.20 3.10 0   4
+  21 161125 0156 34.10 72.7420N 124.9200E  14.50  36.52  82.80  14.50 0.60 0   7
+  22 161125 0517 25.90 72.7650N 124.9400E  13.50  35.82  85.36  13.50 1.60 0   6
+  23 161125 0525 15.90 72.7740N 124.9500E  11.60  35.48  86.37  11.60 0.80 0   6
+  24 161125 0556  2.00 72.7350N 124.9700E   5.70  34.84  82.01   5.70 0.20 0   6
+  25 170117 0846 48.60 72.2130N 127.3400E  22.00 -45.97  23.77  22.00 0.30 0   6
+  26 170122 1614 27.60 71.9670N 128.0400E  10.30 -70.45  -3.68  10.30 0.90 0   6
+  27 170125 2244  0.20 72.4440N 126.0200E  13.10  -0.68  49.54  13.10 0.80 0   6
+  28 170302 1359 59.10 72.6830N 124.8900E  11.50  37.60  76.21  11.50 0.50 0   7
+  29 170302 2335 20.20 71.8850N 130.3000E  14.80-148.82 -12.83  14.80 2.10 0   9
+  30 170304 2135  2.90 72.6880N 124.9400E  13.40  35.90  76.77  13.40 1.30 0   7
+  31 170307 0447 21.00 72.6940N 124.9200E  14.20  36.57  77.44  14.20 1.70 0  10
+  32 170307 2016 50.80 72.6910N 124.9100E  15.30  36.91  77.10  15.30 1.10 0   6
+  33 170309 1454  0.80 72.6830N 124.9000E  15.60  37.26  76.21  15.60 0.30 0   6
+  34 170311 0430 55.40 72.3130N 126.5000E  24.50 -17.11  34.93  24.50 0.30 0   6
+  35 170312 0416 39.20 71.9240N 128.0800E   3.40 -71.91  -8.48   3.40 2.10 0   6
+  36 170313 0553 59.10 72.6980N 124.9200E  15.10  36.57  77.89  15.10 1.00 0   9
+  37 170313 0809  5.60 72.4500N 125.0800E  14.90  31.36  50.21  14.90 1.20 0   7
+  38 170315 0234 46.50 72.6540N 123.8400E  16.90  73.22  72.98  16.90 1.40 0   7
+  39 170317 1007 14.10 72.2350N 125.9800E   3.90   0.69  26.22   3.90 0.50 0   7
+  40 170320 0711 14.60 72.1250N 127.2200E  16.80 -41.95  13.95  16.80 0.90 0   6
+  41 170320 0853 56.40 72.7090N 124.9700E   5.10  34.86  79.11   5.10 0.40 0   6
+  42 170320 1900 34.30 72.4150N 126.1200E  18.00  -4.09  46.31  18.00 0.60 0   7
+  43 170323 0519 24.60 71.6470N 129.1800E   5.20-110.76 -39.39   5.20 1.20 0   6
+  44 170323 1612 49.70 72.4530N 125.1100E   8.30  30.33  50.55   8.30 0.50 0   6
+  45 170323 1906 41.20 72.4070N 130.2500E  18.30-145.04  45.41  18.30 1.00 0   6
+  46 170326 0836 34.10 71.9930N 127.6700E  16.10 -57.63  -0.78  16.10 1.50 0   7
+  47 170402 0422  1.00 72.7220N 125.6900E  21.90  10.49  80.56  21.90 1.20 0  10
+  48 170402 0636 37.20 72.7310N 125.6900E  23.50  10.49  81.57  23.50 0.70 0   6
+  49 170404 2347 35.70 72.7580N 124.3800E  22.60  54.76  84.58  22.60 0.50 0   6
+  50 170405 0307 36.10 71.6810N 128.9500E  15.30-102.66 -35.60  15.30 1.00 0  10
+  51 170405 1410 53.20 71.5100N 128.9000E   9.30-101.37 -54.68   9.30 1.70 0  10
+  52 170406 0838 43.20 72.3850N 129.3800E  15.50-115.42  42.96  15.50 0.90 0  10
+  53 170406 1728  1.00 72.7230N 125.6900E  21.30  10.49  80.67  21.30 0.90 0  10
+ WARNING:
+ epicentral distance: 325.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 332.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 345.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 391.9 > dmax ( 300.0) ==> skipping phase !
+  54 170407 1729  3.40 74.8930N 128.6300E  15.60 -83.67 322.81  15.60 1.80 0   2
+ WARNING:
+ epicentral distance: 311.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 315.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 328.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 374.2 > dmax ( 300.0) ==> skipping phase !
+  55 170407 1729  3.50 74.7270N 128.8100E   0.40 -89.83 304.29   0.40 1.60 0   5
+  56 170408 1004 44.90 72.6070N 124.9400E  15.00  35.98  67.73  15.00 1.40 0  13
+  57 170409 0856 47.20 73.3850N 128.5500E  15.60 -84.71 154.54  15.60 2.50 0   6
+  58 170409 0902 45.60 73.3500N 128.4400E  15.10 -81.13 150.64  15.10 1.10 0   7
+  59 170410 1520  8.50 72.0030N 128.3900E   2.70 -82.46   0.33   2.70 1.00 0  10
+  60 170410 1813  3.60 70.9360N 129.1200E   3.70-110.72-118.73   3.70 2.20 0  13
+  61 170412 1507  0.60 71.5070N 129.7200E   0.00-130.05 -55.01   0.00 0.70 0   6
+  62 170413 0651 20.10 73.3680N 125.4200E  15.60  19.28 152.65  15.60 1.00 0  10
+  63 170414 0459 18.80 72.2680N 127.3800E  20.10 -47.27  29.90  20.10 0.50 0   7
+  64 170414 0540  4.80 73.6400N 130.9700E   8.00-163.92 183.00   8.00 1.80 0  11
+  65 170414 1656 23.40 72.1850N 127.4000E  15.50 -48.06  20.64  15.50 0.20 0   6
+  66 170414 1753 32.80 72.3840N 130.4600E  17.90-152.30  42.85  17.90 0.70 0   6
+  67 170416 0523 41.90 71.9560N 127.0800E  19.20 -37.31  -4.91  19.20 1.60 0  13
+  68 170416 1220 14.20 72.9470N 124.4900E  20.40  50.77 105.67  20.40 1.00 0  11
+ WARNING:
+ epicentral distance: 320.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 381.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 398.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 405.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 424.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 431.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 445.5 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 451.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 464.3 > dmax ( 300.0) ==> skipping phase !
+  69 170416 1257 48.30 68.8710N 131.7500E  73.50-214.97-349.14  73.50 2.20 0   0
+  70 170416 1821  5.50 72.8670N 125.0000E  19.30  33.70  96.74  19.30 1.30 0  13
+  71 170418 0606  4.10 72.5080N 125.8200E   1.30   6.13  56.68   1.30 0.20 0   6
+ WARNING:
+ epicentral distance: 315.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 332.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 345.3 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 352.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 346.7 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 356.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 363.9 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 372.8 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 378.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 378.6 > dmax ( 300.0) ==> skipping phase !
+  72 170418 1005 56.80 69.3310N 122.4100E  97.00 132.70-297.82  97.00 2.20 0   1
+  73 170418 1500 12.90 72.7340N 124.5100E  23.10  50.40  81.90  23.10 1.30 0  12
+  74 170420 1302 36.20 72.6290N 129.0200E  21.80-102.44  70.19  21.80 0.90 0  11
+  75 170420 2248 46.70 72.0220N 129.1200E   0.00-107.59   2.46   0.00 0.70 0  11
+ WARNING:
+ epicentral distance: 313.1 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 324.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 324.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 342.4 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 349.0 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 380.2 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 381.6 > dmax ( 300.0) ==> skipping phase !
+ WARNING:
+ epicentral distance: 408.0 > dmax ( 300.0) ==> skipping phase !
+  76 170423 0850 54.60 74.7080N 132.7900E   0.10-217.19 302.17   0.10 1.90 0   0
+  77 170423 1455 44.10 72.8400N 124.4900E  16.80  50.92  93.73  16.80 0.60 0   8
+  78 170423 2313 41.80 72.5960N 124.8700E  22.00  38.36  66.50  22.00 1.30 0  12
+  79 170424 0609 58.60 71.9600N 128.0200E   0.10 -69.77  -4.46   0.10 1.10 0  12
+  80 170424 0755 26.70 71.9480N 128.0300E   0.00 -70.14  -5.80   0.00 1.00 0  12
+  81 170424 0755 26.90 71.9590N 128.0300E   0.00 -70.12  -4.57   0.00 1.00 0  12
+  82 170425 0652 23.30 71.9600N 128.0300E   0.00 -70.12  -4.46   0.00 1.20 0   9
+  83 170426 0051 23.20 71.9450N 128.0600E   6.60 -71.18  -6.14   6.60 0.70 0   6
+  84 170426 1425 21.20 72.0790N 127.2600E  21.00 -43.38   8.82  21.00 0.10 0   6
+  85 170426 1834 24.60 71.5840N 130.8000E  10.90-167.46 -46.42  10.90 1.20 0   8
+  86 170426 1840 44.10 72.2710N 126.3600E  18.10 -12.33  30.24  18.10 1.30 0   8
+  87 170427 0912 28.80 72.0640N 127.7900E   2.60 -61.65   7.14   2.60 0.90 0   8
+  88 170427 1041 38.10 71.7480N 128.9900E   8.40-103.86 -28.12   8.40 0.70 0   7
+  89 170427 2010 47.80 72.8010N 130.2000E  20.20-141.80  89.38  20.20 1.30 0   8
+  90 170427 2010 48.30 72.7890N 130.1400E  20.10-139.82  88.04  20.10 1.30 0   8
+  91 170427 2342 34.10 72.7630N 125.0100E  19.50  33.46  85.14  19.50 0.80 0   6
+
+ readings for station 624  :  74
+ readings for station 628  :  69
+ readings for station 630  :  53
+ readings for station 627  :  46
+ readings for station 621  :  59
+ readings for station 629  :  43
+ readings for station 622  :  58
+ readings for station 620  :  48
+ readings for station 623  :  55
+ readings for station 626  :  52
+ readings for station 625  :  49
+ readings for station 631  :  49
+ readings for station 632  :  24
+
+ Total number of stations with readings:  13
+
+ Total number of readings:     679
+ Total number of P readings:       0
+ Total number of S readings:       0
+
+
+ ~~~ store parts of G ...
+ ~~~ compute RMS and DATVAR ...
+
+ Total number of observations is:   679
+
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ Event#   7 >>>  160823 0652  AVRES =  1.09 NOBS =  6
+ Event#  10 >>>  160920 1607  AVRES =  3.71 NOBS =  2
+ Event#  11 >>>  160925 1911  AVRES =  3.36 NOBS =  2
+ Event#  35 >>>  170312 0416  AVRES = -1.05 NOBS =  6
+ Event#  39 >>>  170317 1007  AVRES = -1.16 NOBS =  7
+ Event#  41 >>>  170320 0853  AVRES = -1.07 NOBS =  6
+ Event#  54 >>>  170407 1729  AVRES =  2.39 NOBS =  2
+ Event#  55 >>>  170407 1729  AVRES =  1.99 NOBS =  5
+ Event#  57 >>>  170409 0856  AVRES =  1.96 NOBS =  6
+ Event#  58 >>>  170409 0902  AVRES =  1.21 NOBS =  7
+ Event#  61 >>>  170412 1507  AVRES = -1.09 NOBS =  6
+ Event#  64 >>>  170414 0540  AVRES =  2.84 NOBS = 11
+ Event#  71 >>>  170418 0606  AVRES = -1.09 NOBS =  6
+ Event#  72 >>>  170418 1005  AVRES =  3.76 NOBS =  1
+ Event#  79 >>>  170424 0609  AVRES = -1.15 NOBS = 12
+ Event#  80 >>>  170424 0755  AVRES = -1.11 NOBS = 12
+ Event#  81 >>>  170424 0755  AVRES = -1.10 NOBS = 12
+ Event#  82 >>>  170425 0652  AVRES = -1.30 NOBS =  9
+ Event#  87 >>>  170427 0912  AVRES = -1.09 NOBS =  8
+
+ ^^^^^^^^^ C H E C K   these events above ^^^^^^^^
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+ ~~~ save initial datvar ...
+
+ Iteration nr  0 obtained:
+ DATVAR=    2.500058 mean sqrd residual=     1.126683  RMS RESIDUAL=     1.061453
+
+ After  0 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+   327 straight and direct rays =  0.49168 [ -0.46632]
+   352 refracted           rays =  1.02997 [  0.26766]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+   679 ALL                 RAYS =  0.77074 [ -0.08582]        0.00 %
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+           ITERATION no  1
+
+ ~~~ set units for this iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ Damping factors to be used in this iteration:
+   Othet=   0.010   XYthet  =   0.010   Zthet=  0.010
+ STAthet=   0.010   Vthet   =   1.000
+
+ ~~~ damp G ...
+ ~~~ solve G * b = RHT ...
+ ~~~ fix units ...
+ ~~~ apply eventually step-length damping ...
+ ~~~ adjust model (hypocenters, stacorr & veloc.) ...
+
+ doing velocity adjustments now...
+
+ doing station-correction adjustments...
+
+ ~~~ compute effective step-length ...
+
+ (Applied) Step length =   2.298
+
+ ~~~ set units for next iteration ...
+ ~~~ determine number of unknowns for next iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ reset G and RHT ...
+ ~~~ raytracing, setup G ...
+ ~~~ store parts of G ...
+ ~~~ set units back for current iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ compute RMS and DATVAR ...
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ Event#  10 >>>  160920 1607  AVRES =  3.34 NOBS =  2
+ Event#  11 >>>  160925 1911  AVRES =  3.02 NOBS =  2
+ Event#  39 >>>  170317 1007  AVRES = -1.05 NOBS =  7
+ Event#  54 >>>  170407 1729  AVRES =  2.15 NOBS =  2
+ Event#  55 >>>  170407 1729  AVRES =  1.79 NOBS =  5
+ Event#  57 >>>  170409 0856  AVRES =  1.76 NOBS =  6
+ Event#  58 >>>  170409 0902  AVRES =  1.09 NOBS =  7
+ Event#  64 >>>  170414 0540  AVRES =  2.55 NOBS = 11
+ Event#  72 >>>  170418 1005  AVRES =  3.37 NOBS =  1
+ Event#  79 >>>  170424 0609  AVRES = -1.03 NOBS = 12
+ Event#  82 >>>  170425 0652  AVRES = -1.17 NOBS =  9
+
+ ^^^^^^^^^ C H E C K   these events above ^^^^^^^^
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+ ~~~ check solution (better? worse?) ...
+
+ Iteration nr  1 obtained:
+ DATVAR=    2.155868 mean sqrd residual=     0.930294  RMS RESIDUAL=     0.964517
+
+ After  1 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+   329 straight and direct rays =  0.44137 [ -0.41821]
+   350 refracted           rays =  0.93880 [  0.24373]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+   679 ALL                 RAYS =  0.69778 [ -0.07700]       -9.47 %
+
+ ~~~ iteration done; output results ...
+
+  eq       ot     x      y      z      rms    avres   dot     dx     dy     dz
+    1      9.04  38.64 112.00  23.19   0.28  -0.05   -0.058  0.034  0.080  0.091
+    2      9.24  37.97 110.68  22.90   0.28  -0.07   -0.063  0.020  0.103  0.102
+    3     27.22-130.22  -8.54  12.35   0.76   0.15   -0.076 -0.219  0.057  0.252
+    4     15.60-131.24  -6.84  11.09   0.84   0.12   -0.097 -0.253  0.079  0.086
+    5     45.66 -40.28  38.78  23.82   0.12  -0.25   -0.042  0.054 -0.050  0.023
+    6     49.46 -36.76  40.69  16.75   0.11  -0.41   -0.041  0.140 -0.039  0.249
+    7     13.92-134.93-118.98   6.19   1.52   0.98   -0.084  0.281  0.075 -0.214
+    8     30.33-140.90 -43.86   8.70   0.96   0.59   -0.072 -0.043 -0.011  0.097
+    9     39.64  10.91  56.65  12.19   0.06  -0.59   -0.059  0.022 -0.038  0.093
+   10     18.26 -87.25-308.29  16.20   1.00   3.34   -0.042 -0.186  0.014  0.005
+   11      5.52 -62.49-309.65  15.61   1.18   3.02   -0.078 -0.231 -0.002  0.009
+   12     51.14  35.04  94.64  15.83   0.19  -0.35   -0.057 -0.028  0.020  0.230
+   13     46.84  33.42  97.87  19.13   0.35  -0.13   -0.058  0.068  0.015  0.127
+   14     55.83  33.36  97.50  13.99   0.79  -0.17   -0.066  0.004 -0.025  0.090
+   15     44.64  34.03  97.31  17.30   0.87   0.13   -0.057 -0.005  0.007  0.104
+   16     44.83  34.99  95.82  18.65   0.89   0.21   -0.066 -0.066  0.082  0.055
+   17     22.03  -0.95  82.41  18.62   0.61  -0.16   -0.066  0.068  0.060  0.119
+   18     36.45 -33.99   4.50  11.50   0.13  -0.53   -0.054  0.127  0.041  0.297
+   19     33.25  41.40  64.10  10.15   0.13  -0.56   -0.049 -0.045 -0.059  0.055
+   20     45.93  37.83  85.12  16.23   0.35  -0.25   -0.070 -0.020 -0.014  0.031
+   21     34.05  36.45  82.74  14.33   0.48  -0.34   -0.051 -0.071 -0.054 -0.170
+   22     25.85  35.75  85.31  13.50   0.26  -0.45   -0.053 -0.070 -0.048  0.001
+   23     15.84  35.40  86.30  11.55   0.41  -0.51   -0.055 -0.075 -0.068 -0.046
+   24      1.92  34.82  82.05   5.70   0.51  -0.83   -0.080 -0.014  0.038 -0.004
+   25     48.59 -45.88  23.65  22.20   0.13  -0.19   -0.014  0.093 -0.116  0.197
+   26     27.55 -70.35  -3.88  10.46   0.10  -0.55   -0.048  0.102 -0.194  0.160
+   27      0.16  -0.62  49.39  13.23   0.20  -0.42   -0.043  0.061 -0.153  0.129
+   28     59.05  37.64  76.18  11.53   0.75  -0.16   -0.053  0.041 -0.030  0.029
+   29     20.13-148.86 -12.85  14.84   0.81   0.38   -0.067 -0.043 -0.016  0.036
+   30      2.85  35.87  76.74  13.34   0.76  -0.04   -0.049 -0.032 -0.027 -0.055
+   31     20.94  36.45  77.42  14.21   0.90  -0.04   -0.056 -0.116 -0.018  0.013
+   32     50.75  36.87  77.02  15.32   0.18  -0.44   -0.048 -0.042 -0.087  0.016
+   33      0.76  37.23  76.15  15.67   0.30  -0.31   -0.043 -0.024 -0.059  0.074
+   34     55.37 -16.97  34.88  24.59   0.07  -0.21   -0.025  0.139 -0.046  0.094
+   35     39.17 -71.79  -8.54   3.79   0.34  -0.95   -0.025  0.120 -0.060  0.386
+   36     59.05  36.52  77.83  15.15   0.66  -0.11   -0.046 -0.042 -0.054  0.048
+   37      5.55  31.35  50.17  14.85   0.12  -0.46   -0.049 -0.010 -0.044 -0.050
+   38     46.45  73.14  72.96  16.98   0.42  -0.18   -0.055 -0.080 -0.016  0.085
+   39     14.03   0.76  26.19   4.12   0.38  -1.05   -0.072  0.070 -0.031  0.224
+   40     14.55 -41.87  13.95  16.90   0.13  -0.40   -0.048  0.085  0.001  0.103
+   41     56.34  34.86  78.95   5.21   0.12  -0.97   -0.058 -0.003 -0.168  0.105
+   42     34.27  -3.99  46.26  18.08   0.13  -0.33   -0.035  0.108 -0.049  0.079
+   43     24.57-110.62 -39.41   5.45   0.41  -0.78   -0.035  0.142 -0.025  0.253
+   44     49.64  30.36  50.49   8.36   0.10  -0.67   -0.062  0.027 -0.058  0.065
+   45     41.15-145.15  45.50  18.48   0.82   0.46   -0.052 -0.115  0.090  0.180
+   46     34.06 -57.57  -0.94  16.32   0.11  -0.35   -0.044  0.063 -0.158  0.220
+   47      0.97  10.63  80.51  21.89   0.89   0.18   -0.028  0.143 -0.055 -0.014
+   48     37.16  10.59  81.60  23.63   0.15  -0.15   -0.038  0.103  0.032  0.133
+   49     35.66  54.63  84.54  22.57   0.24  -0.26   -0.039 -0.128 -0.038 -0.035
+   50     36.04-102.56 -35.58  15.41   0.57  -0.03   -0.062  0.091  0.011  0.111
+   51     53.11-101.33 -54.66   9.21   0.98   0.21   -0.086  0.045  0.015 -0.087
+   52     43.12-115.62  43.19  15.67   0.58   0.06   -0.084 -0.204  0.226  0.168
+   53      0.97  10.62  80.66  21.31   0.86   0.20   -0.029  0.135 -0.016  0.008
+   54      3.16 -83.68 322.78  15.63   0.51   2.15   -0.235 -0.007 -0.029  0.026
+   55      3.30 -89.77 304.28   0.44   0.47   1.79   -0.201  0.060 -0.005  0.037
+   56     44.84  35.97  67.64  15.09   0.80  -0.13   -0.055 -0.004 -0.089  0.086
+   57     47.14 -84.62 154.63  15.61   0.80   1.76   -0.063  0.083  0.091  0.007
+   58     45.55 -81.00 150.77  15.14   1.24   1.09   -0.050  0.134  0.131  0.042
+   59      8.46 -82.37   0.27   3.01   0.82  -0.81   -0.041  0.086 -0.064  0.314
+   60      3.51-110.63-118.51   3.51   1.65   0.63   -0.093  0.083  0.216 -0.187
+   61      0.50-130.17 -55.03   0.34   0.53  -0.98   -0.102 -0.123 -0.021  0.229
+   62     20.04  19.59 152.59  15.71   1.30   0.46   -0.059  0.311 -0.058  0.105
+   63     18.76 -47.16  29.83  20.36   0.14  -0.29   -0.036  0.112 -0.072  0.260
+   64      4.75-163.46 183.53   8.01   1.01   2.55   -0.055  0.461  0.529  0.010
+   65     23.37 -47.94  20.56  15.66   0.09  -0.40   -0.027  0.130 -0.087  0.156
+   66     32.75-152.48  42.98  18.16   0.57   0.26   -0.047 -0.179  0.131  0.259
+   67     41.86 -37.20  -5.07  19.25   0.20  -0.24   -0.044  0.111 -0.157  0.049
+   68     14.13  50.91 105.77  20.42   0.51   0.14   -0.069  0.138  0.102  0.024
+   69     48.30-214.97-349.14  73.50   0.00   0.00    0.000  0.000  0.000  0.000
+   70      5.45  33.74  96.75  19.28   0.97   0.24   -0.054  0.035  0.011 -0.023
+   71      4.03   6.19  56.66   1.36   0.58  -0.98   -0.066  0.062 -0.025  0.065
+   72     56.56 132.68-297.80  96.99  11.34   3.37   -0.237 -0.015  0.020 -0.006
+   73     12.87  50.43  81.80  23.07   0.65   0.20   -0.031  0.037 -0.100 -0.029
+   74     36.15-102.51  70.36  22.17   0.51   0.16   -0.049 -0.068  0.175  0.368
+   75     46.58-107.93   2.64   0.24   1.15  -0.75   -0.118 -0.343  0.187  0.127
+   76     54.60-217.19 302.17   0.10   0.00   0.00    0.000  0.000  0.000  0.000
+   77     44.05  50.88  93.73  16.79   0.42  -0.14   -0.050 -0.045  0.003 -0.008
+   78     41.76  38.40  66.41  22.01   0.53  -0.09   -0.043  0.032 -0.094  0.006
+   79     58.55 -69.64  -4.53   0.42   0.54  -1.03   -0.049  0.132 -0.068  0.321
+   80     26.66 -70.12  -5.94   0.59   0.52  -1.00   -0.041  0.015 -0.134  0.480
+   81     26.85 -69.98  -4.66   0.35   0.57  -0.99   -0.053  0.142 -0.081  0.239
+   82     23.24 -69.95  -4.54   0.32   0.51  -1.17   -0.061  0.171 -0.081  0.210
+   83     23.17 -71.05  -6.15   6.72   0.15  -0.79   -0.034  0.136 -0.016  0.121
+   84     21.18 -43.26   8.71  21.12   0.05  -0.26   -0.024  0.123 -0.105  0.120
+   85     24.52-167.39 -46.40  10.73   1.10   0.70   -0.079  0.075  0.015 -0.167
+   86     44.05 -12.25  30.14  18.31   0.09  -0.36   -0.047  0.085 -0.104  0.214
+   87     28.76 -61.58   7.02   2.91   0.23  -0.98   -0.044  0.080 -0.118  0.315
+   88     38.04-103.75 -28.21   8.44   0.51  -0.39   -0.062  0.109 -0.093  0.043
+   89     47.76-141.95  89.57  20.54   0.86   0.85   -0.037 -0.150  0.196  0.340
+   90     48.26-139.93  88.27  20.43   0.81   0.76   -0.043 -0.115  0.227  0.327
+   91     34.03  33.54  85.12  19.58   0.76   0.07   -0.069  0.081 -0.024  0.079
+
+ A V E R A G E   of ADJUSTMENTS :                    -0.059  0.024 -0.005  0.098
+ A V E R A G E   of ABSOLUTE ADJUSTMENTS :            0.059  0.095  0.073  0.122
+
+
+ Step length damping of 0.10000 was applied.
+
+
+ Velocity adjustments:
+     vp    dvp      hp   reflector
+ Velocity model   1
+   4.682  0.042   -5.000      
+   4.783  0.073    3.010      
+   6.211 -0.019    8.020      
+   6.416 -0.034   13.040      
+   6.676 -0.034   21.020      
+   7.024 -0.016   24.880      
+   7.948  0.168   36.710      
+   8.699  0.009   40.900      
+   9.020 -0.200   41.080      
+
+ Calculation of average velocity starts at layer #           1
+ z = -5.00 ...  3.01    v = 4.68    AVEL = 4.68 downto z =   3.01
+ z =  3.01 ...  8.02    v = 4.78    AVEL = 4.72 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.21    AVEL = 5.14 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.42    AVEL = 5.53 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.68    AVEL = 5.68 downto z =  24.88
+ z = 24.88 ... 36.71    v = 7.02    AVEL = 6.06 downto z =  36.71
+ z = 36.71 ... 40.90    v = 7.95    AVEL = 6.23 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.70    AVEL = 6.24 downto z =  41.08
+
+
+ Calculation of average velocity starts at layer #           2
+ z =  3.01 ...  8.02    v = 4.78    AVEL = 4.78 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.21    AVEL = 5.50 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.42    AVEL = 5.90 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.68    AVEL = 6.04 downto z =  24.88
+ z = 24.88 ... 36.71    v = 7.02    AVEL = 6.39 downto z =  36.71
+ z = 36.71 ... 40.90    v = 7.95    AVEL = 6.56 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.70    AVEL = 6.57 downto z =  41.08
+
+
+
+ Adjusted station corrections:
+   stn  ptcor  dpcor  
+  624   0.000  0.000  628  -0.030 -0.030  630  -0.027 -0.027  627   0.002  0.002
+  621   0.015  0.015  629   0.008  0.008  622   0.016  0.016  620   0.012  0.012
+  623   0.029  0.029  626   0.016  0.016  625   0.012  0.012  631   0.039  0.039
+  632  -0.001 -0.001
+
+ ~~~ another iteration? ...
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+           ITERATION no  2
+
+ ~~~ set units for this iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ Damping factors to be used in this iteration:
+   Othet=   0.010   XYthet  =   0.010   Zthet=  0.010
+ STAthet=   0.010   Vthet   =   1.000
+
+ ~~~ damp G ...
+ ~~~ solve G * b = RHT ...
+ ~~~ fix units ...
+ ~~~ apply eventually step-length damping ...
+ ~~~ adjust model (hypocenters, stacorr & veloc.) ...
+
+ doing velocity adjustments now...
+
+ doing station-correction adjustments...
+
+ ~~~ compute effective step-length ...
+
+ (Applied) Step length =   2.296
+
+ ~~~ set units for next iteration ...
+ ~~~ determine number of unknowns for next iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ reset G and RHT ...
+ ~~~ raytracing, setup G ...
+ ~~~ store parts of G ...
+ ~~~ set units back for current iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ compute RMS and DATVAR ...
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ Event#  10 >>>  160920 1607  AVRES =  2.98 NOBS =  2
+ Event#  11 >>>  160925 1911  AVRES =  2.70 NOBS =  2
+ Event#  54 >>>  170407 1729  AVRES =  1.92 NOBS =  2
+ Event#  55 >>>  170407 1729  AVRES =  1.60 NOBS =  5
+ Event#  57 >>>  170409 0856  AVRES =  1.58 NOBS =  6
+ Event#  64 >>>  170414 0540  AVRES =  2.28 NOBS = 11
+ Event#  72 >>>  170418 1005  AVRES =  2.99 NOBS =  1
+ Event#  82 >>>  170425 0652  AVRES = -1.04 NOBS =  9
+
+ ^^^^^^^^^ C H E C K   these events above ^^^^^^^^
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+ ~~~ check solution (better? worse?) ...
+
+ Iteration nr  2 obtained:
+ DATVAR=    1.764085 mean sqrd residual=     0.761233  RMS RESIDUAL=     0.872487
+
+ After  2 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+   329 straight and direct rays =  0.39641 [ -0.37523]
+   350 refracted           rays =  0.84754 [  0.22190]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+   679 ALL                 RAYS =  0.62895 [ -0.06743]       -9.86 %
+
+ ~~~ iteration done; output results ...
+
+  eq       ot     x      y      z      rms    avres   dot     dx     dy     dz
+    1      8.99  38.66 112.07  23.28   0.25  -0.05   -0.054  0.020  0.074  0.086
+    2      9.18  37.99 110.78  23.00   0.25  -0.06   -0.059  0.014  0.095  0.096
+    3     27.15-130.42  -8.47  12.61   0.69   0.14   -0.071 -0.204  0.068  0.257
+    4     15.51-131.47  -6.75  11.16   0.77   0.11   -0.092 -0.233  0.091  0.077
+    5     45.62 -40.23  38.74  23.86   0.11  -0.22   -0.040  0.054 -0.044  0.039
+    6     49.42 -36.63  40.65  17.00   0.11  -0.37   -0.040  0.132 -0.034  0.252
+    7     13.84-134.67-118.94   5.99   1.38   0.88   -0.081  0.265  0.048 -0.195
+    8     30.26-140.96 -43.89   8.81   0.87   0.53   -0.066 -0.053 -0.027  0.115
+    9     39.59  10.93  56.60  12.25   0.06  -0.52   -0.053  0.014 -0.044  0.052
+   10     18.20 -87.46-308.28  16.21   0.99   2.98   -0.053 -0.206  0.016  0.006
+   11      5.43 -62.75-309.65  15.62   1.19   2.70   -0.089 -0.257 -0.002  0.010
+   12     51.09  35.01  94.67  16.09   0.18  -0.31   -0.055 -0.028  0.023  0.257
+   13     46.79  33.48  97.88  19.25   0.32  -0.12   -0.053  0.059  0.007  0.125
+   14     55.77  33.36  97.47  14.09   0.70  -0.15   -0.061 -0.002 -0.026  0.100
+   15     44.59  34.02  97.32  17.41   0.79   0.12   -0.053 -0.009  0.008  0.109
+   16     44.77  34.92  95.90  18.71   0.81   0.19   -0.062 -0.069  0.083  0.054
+   17     21.97  -0.89  82.46  18.73   0.55  -0.15   -0.062  0.061  0.055  0.110
+   18     36.39 -33.88   4.55  11.79   0.12  -0.48   -0.052  0.118  0.045  0.288
+   19     33.21  41.35  64.04  10.21   0.13  -0.50   -0.045 -0.050 -0.057  0.056
+   20     45.86  37.80  85.11  16.25   0.31  -0.22   -0.065 -0.027 -0.015  0.023
+   21     34.00  36.37  82.69  14.14   0.44  -0.30   -0.046 -0.079 -0.056 -0.188
+   22     25.80  35.68  85.27  13.50   0.24  -0.40   -0.049 -0.075 -0.046 -0.000
+   23     15.80  35.34  86.22  11.53   0.39  -0.45   -0.048 -0.059 -0.079 -0.023
+   24      1.84  34.80  82.10   5.69   0.49  -0.74   -0.076 -0.021  0.045 -0.004
+   25     48.57 -45.79  23.53  22.39   0.13  -0.17   -0.014  0.086 -0.117  0.194
+   26     27.51 -70.24  -4.05  10.61   0.09  -0.49   -0.045  0.105 -0.177  0.155
+   27      0.11  -0.56  49.25  13.37   0.16  -0.38   -0.042  0.059 -0.143  0.138
+   28     59.00  37.66  76.17  11.51   0.67  -0.14   -0.050  0.018 -0.012 -0.017
+   29     20.07-148.90 -12.85  14.86   0.72   0.34   -0.065 -0.034 -0.006  0.024
+   30      2.81  35.83  76.71  13.28   0.69  -0.04   -0.044 -0.035 -0.034 -0.069
+   31     20.89  36.34  77.40  14.22   0.81  -0.03   -0.051 -0.119 -0.021  0.005
+   32     50.71  36.82  76.93  15.33   0.16  -0.39   -0.044 -0.045 -0.085  0.016
+   33      0.72  37.20  76.09  15.74   0.27  -0.27   -0.039 -0.029 -0.060  0.061
+   34     55.35 -16.83  34.84  24.68   0.07  -0.19   -0.023  0.135 -0.038  0.088
+   35     39.15 -71.67  -8.59   4.19   0.32  -0.85   -0.022  0.128 -0.050  0.404
+   36     59.01  36.48  77.77  15.18   0.59  -0.10   -0.042 -0.048 -0.057  0.036
+   37      5.51  31.33  50.13  14.80   0.11  -0.41   -0.045 -0.017 -0.042 -0.055
+   38     46.40  73.05  72.93  17.07   0.39  -0.16   -0.050 -0.085 -0.026  0.090
+   39     13.96   0.82  26.16   4.36   0.34  -0.93   -0.068  0.065 -0.036  0.233
+   40     14.51 -41.79  13.95  17.00   0.12  -0.36   -0.046  0.074 -0.002  0.099
+   41     56.29  34.85  78.78   5.31   0.11  -0.86   -0.054 -0.011 -0.169  0.104
+   42     34.23  -3.88  46.21  18.15   0.12  -0.30   -0.033  0.103 -0.044  0.072
+   43     24.53-110.47 -39.43   5.71   0.39  -0.70   -0.032  0.151 -0.017  0.259
+   44     49.58  30.38  50.43   8.43   0.09  -0.60   -0.058  0.019 -0.056  0.068
+   45     41.10-145.25  45.60  18.65   0.73   0.42   -0.050 -0.097  0.094  0.171
+   46     34.02 -57.50  -1.08  16.52   0.10  -0.31   -0.041  0.066 -0.143  0.204
+   47      0.95  10.76  80.45  21.88   0.81   0.17   -0.026  0.125 -0.056 -0.007
+   48     37.13  10.69  81.62  23.75   0.14  -0.13   -0.033  0.099  0.023  0.117
+   49     35.63  54.50  84.50  22.54   0.22  -0.23   -0.036 -0.130 -0.041 -0.020
+   50     35.99-102.43 -35.60  15.47   0.51  -0.02   -0.050  0.135 -0.020  0.058
+   51     53.03-101.28 -54.63   9.11   0.90   0.19   -0.080  0.049  0.028 -0.100
+   52     43.04-115.80  43.41  15.82   0.54   0.05   -0.079 -0.183  0.228  0.147
+   53      0.94  10.74  80.64  21.32   0.78   0.18   -0.027  0.117 -0.016  0.013
+   54      2.92 -83.69 322.75  15.65   0.48   1.92   -0.250 -0.007 -0.032  0.027
+   55      3.09 -89.71 304.28   0.48   0.42   1.60   -0.211  0.064 -0.006  0.039
+   56     44.79  35.96  67.55  15.16   0.73  -0.11   -0.051 -0.012 -0.089  0.072
+   57     47.07 -84.56 154.73  15.61   0.73   1.58   -0.065  0.069  0.092  0.007
+   58     45.50 -80.85 150.90  15.18   1.13   0.98   -0.051  0.149  0.133  0.035
+   59      8.42 -82.26   0.20   3.32   0.77  -0.73   -0.039  0.107 -0.072  0.305
+   60      3.42-110.55-118.31   3.34   1.53   0.57   -0.088  0.086  0.196 -0.177
+   61      0.40-130.30 -55.04   0.58   0.50  -0.87   -0.095 -0.126 -0.009  0.238
+   62     19.99  19.87 152.52  15.81   1.20   0.42   -0.054  0.283 -0.067  0.109
+   63     18.73 -47.06  29.76  20.61   0.12  -0.26   -0.034  0.103 -0.076  0.249
+   64      4.68-162.98 184.08   8.02   0.94   2.28   -0.064  0.480  0.556  0.011
+   65     23.35 -47.81  20.47  15.82   0.09  -0.36   -0.026  0.124 -0.084  0.159
+   66     32.71-152.64  43.12  18.41   0.51   0.23   -0.046 -0.165  0.143  0.252
+   67     41.81 -37.09  -5.21  19.29   0.19  -0.22   -0.041  0.108 -0.143  0.045
+   68     14.06  51.02 105.89  20.44   0.46   0.13   -0.067  0.111  0.117  0.012
+   69     48.30-214.97-349.14  73.50   0.00   0.00    0.000  0.000  0.000  0.000
+   70      5.40  33.77  96.76  19.27   0.88   0.22   -0.050  0.030  0.005 -0.010
+   71      3.97   6.24  56.63   1.43   0.56  -0.87   -0.063  0.056 -0.025  0.061
+   72     56.30 132.67-297.77  96.99   8.96   2.99   -0.267 -0.018  0.023 -0.007
+   73     12.84  50.45  81.70  23.05   0.58   0.18   -0.028  0.022 -0.105 -0.018
+   74     36.11-102.56  70.52  22.52   0.46   0.15   -0.046 -0.047  0.161  0.353
+   75     46.47-108.28   2.87   0.36   1.12  -0.66   -0.114 -0.352  0.228  0.122
+   76     54.60-217.19 302.17   0.10   0.00   0.00    0.000  0.000  0.000  0.000
+   77     44.00  50.83  93.73  16.80   0.38  -0.13   -0.047 -0.049  0.000  0.006
+   78     41.72  38.42  66.31  22.01   0.48  -0.08   -0.039  0.024 -0.101  0.008
+   79     58.50 -69.51  -4.59   0.73   0.52  -0.92   -0.047  0.134 -0.060  0.307
+   80     26.62 -70.10  -6.06   1.05   0.48  -0.89   -0.039  0.020 -0.122  0.463
+   81     26.80 -69.83  -4.73   0.57   0.54  -0.88   -0.050  0.144 -0.073  0.225
+   82     23.18 -69.77  -4.62   0.52   0.48  -1.04   -0.057  0.171 -0.073  0.205
+   83     23.13 -70.91  -6.17   6.84   0.13  -0.70   -0.033  0.138 -0.015  0.119
+   84     21.15 -43.13   8.61  21.23   0.05  -0.23   -0.022  0.126 -0.101  0.107
+   85     24.45-167.32 -46.38  10.57   1.00   0.63   -0.076  0.068  0.024 -0.162
+   86     44.01 -12.17  30.04  18.53   0.08  -0.32   -0.046  0.079 -0.101  0.212
+   87     28.73 -61.58   6.94   3.35   0.22  -0.88   -0.029 -0.008 -0.087  0.437
+   88     37.98-103.63 -28.29   8.46   0.46  -0.34   -0.056  0.124 -0.078  0.021
+   89     47.73-142.10  89.77  20.87   0.77   0.76   -0.038 -0.148  0.191  0.330
+   90     48.21-140.04  88.49  20.74   0.72   0.68   -0.043 -0.110  0.223  0.315
+   91     33.96  33.68  85.18  19.64   0.68   0.07   -0.072  0.138  0.062  0.059
+
+ A V E R A G E   of ADJUSTMENTS :                    -0.057  0.022 -0.002  0.096
+ A V E R A G E   of ABSOLUTE ADJUSTMENTS :            0.057  0.093  0.073  0.119
+
+
+ Step length damping of 0.10755 was applied.
+
+
+ Velocity adjustments:
+     vp    dvp      hp   reflector
+ Velocity model   1
+   4.724  0.042   -5.000      
+   4.854  0.071    3.010      
+   6.193 -0.019    8.020      
+   6.384 -0.032   13.040      
+   6.645 -0.031   21.020      
+   7.001 -0.022   24.880      
+   8.127  0.178   36.710      
+   8.711  0.011   40.900      
+   8.820 -0.200   41.080      
+
+ Calculation of average velocity starts at layer #           1
+ z = -5.00 ...  3.01    v = 4.72    AVEL = 4.72 downto z =   3.01
+ z =  3.01 ...  8.02    v = 4.85    AVEL = 4.77 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.19    AVEL = 5.17 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.38    AVEL = 5.54 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.64    AVEL = 5.68 downto z =  24.88
+ z = 24.88 ... 36.71    v = 7.00    AVEL = 6.06 downto z =  36.71
+ z = 36.71 ... 40.90    v = 8.13    AVEL = 6.25 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.71    AVEL = 6.26 downto z =  41.08
+
+
+ Calculation of average velocity starts at layer #           2
+ z =  3.01 ...  8.02    v = 4.85    AVEL = 4.85 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.19    AVEL = 5.52 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.38    AVEL = 5.90 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.64    AVEL = 6.04 downto z =  24.88
+ z = 24.88 ... 36.71    v = 7.00    AVEL = 6.37 downto z =  36.71
+ z = 36.71 ... 40.90    v = 8.13    AVEL = 6.57 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.71    AVEL = 6.58 downto z =  41.08
+
+
+
+ Adjusted station corrections:
+   stn  ptcor  dpcor  
+  624   0.000  0.000  628  -0.059 -0.030  630  -0.052 -0.026  627   0.003  0.001
+  621   0.028  0.013  629   0.017  0.009  622   0.030  0.014  620   0.020  0.008
+  623   0.057  0.027  626   0.030  0.014  625   0.023  0.011  631   0.073  0.034
+  632  -0.006 -0.005
+
+ ~~~ another iteration? ...
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+           ITERATION no  3
+
+ ~~~ set units for this iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ Damping factors to be used in this iteration:
+   Othet=   0.010   XYthet  =   0.010   Zthet=  0.010
+ STAthet=   0.010   Vthet   =   1.000
+
+ ~~~ damp G ...
+ ~~~ solve G * b = RHT ...
+ ~~~ fix units ...
+ ~~~ apply eventually step-length damping ...
+ ~~~ adjust model (hypocenters, stacorr & veloc.) ...
+
+ doing velocity adjustments now...
+ WARNING: Tried to introduce a low-velocity-layer! (Layer  9)
+ Setting DVP from -0.20 to 0.0 and VP to vp(layer_above)+0.001
+
+ doing station-correction adjustments...
+
+ ~~~ compute effective step-length ...
+
+ (Applied) Step length =   2.177
+
+ ~~~ set units for next iteration ...
+ ~~~ determine number of unknowns for next iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ reset G and RHT ...
+ ~~~ raytracing, setup G ...
+ ~~~ store parts of G ...
+ ~~~ set units back for current iteration ...
+ ~~~ determine number of unknowns for this iter. ...
+
+ Number of unknowns (for array-indexing):  nvar =  385
+ Number of effective unknowns        :  nvareff =  386
+ Number of elements on/below main diagonal of matrix G = At*A : kvar =   74305
+
+ ~~~ compute RMS and DATVAR ...
+
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ Events with  | AVRES | > 1.0 SEC are suspicious !
+
+ Event#  10 >>>  160920 1607  AVRES =  2.88 NOBS =  2
+ Event#  11 >>>  160925 1911  AVRES =  2.63 NOBS =  2
+ Event#  54 >>>  170407 1729  AVRES =  1.98 NOBS =  2
+ Event#  55 >>>  170407 1729  AVRES =  1.67 NOBS =  5
+ Event#  57 >>>  170409 0856  AVRES =  1.55 NOBS =  6
+ Event#  64 >>>  170414 0540  AVRES =  2.22 NOBS = 11
+ Event#  72 >>>  170418 1005  AVRES =  2.99 NOBS =  1
+
+ ^^^^^^^^^ C H E C K   these events above ^^^^^^^^
+ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+ ~~~ check solution (better? worse?) ...
+
+ Iteration nr  3 obtained:
+ DATVAR=    1.622517 mean sqrd residual=     0.700144  RMS RESIDUAL=     0.836746
+
+ After  3 iterations we got:
+ Average absolute & unweighted [and mean] residual of
+   326 straight and direct rays =  0.35055 [ -0.32890]
+   353 refracted           rays =  0.81291 [  0.24642]
+     0 reflected           rays =  0.00000 [  0.00000]
+
+   679 ALL                 RAYS =  0.59092 [ -0.02980]       -6.05 %
+
+ ~~~ iteration done; output results ...
+
+  eq       ot     x      y      z      rms    avres   dot     dx     dy     dz
+    1      8.94  38.67 112.14  23.35   0.24  -0.03   -0.045  0.008  0.070  0.074
+    2      9.13  38.00 110.87  23.08   0.24  -0.04   -0.049  0.011  0.089  0.083
+    3     27.10-130.58  -8.36  12.89   0.67   0.16   -0.054 -0.154  0.112  0.278
+    4     15.44-131.56  -6.65  11.11   0.74   0.13   -0.069 -0.087  0.096 -0.051
+    5     45.59 -40.18  38.69  23.90   0.10  -0.20   -0.033  0.050 -0.043  0.034
+    6     49.38 -36.51  40.63  17.25   0.11  -0.32   -0.037  0.113 -0.029  0.244
+    7     13.76-134.44-118.93   5.84   1.33   0.89   -0.073  0.230  0.011 -0.152
+    8     30.21-141.02 -43.89   8.93   0.84   0.55   -0.056 -0.063 -0.002  0.121
+    9     39.54  10.93  56.56  12.30   0.06  -0.47   -0.047  0.007 -0.044  0.053
+   10     18.14 -87.68-308.26  16.22   0.98   2.88   -0.065 -0.224  0.019  0.007
+   11      5.33 -63.03-309.65  15.63   1.17   2.63   -0.099 -0.280 -0.001  0.011
+   12     51.04  34.98  94.69  16.35   0.17  -0.28   -0.048 -0.028  0.028  0.262
+   13     46.74  33.53  97.88  19.36   0.32  -0.08   -0.044  0.049  0.002  0.109
+   14     55.72  33.35  97.45  14.19   0.67  -0.11   -0.053 -0.008 -0.026  0.101
+   15     44.55  34.00  97.33  17.51   0.77   0.15   -0.045 -0.014  0.012  0.102
+   16     44.72  34.85  95.99  18.75   0.79   0.21   -0.053 -0.069  0.082  0.045
+   17     21.92  -0.84  82.51  18.81   0.53  -0.11   -0.053  0.050  0.047  0.085
+   18     36.35 -33.77   4.59  12.05   0.12  -0.42   -0.046  0.103  0.045  0.262
+   19     33.17  41.29  63.99  10.27   0.12  -0.44   -0.038 -0.056 -0.052  0.057
+   20     45.81  37.77  85.09  16.27   0.31  -0.17   -0.055 -0.035 -0.016  0.011
+   21     33.97  36.29  82.63  13.93   0.43  -0.26   -0.037 -0.084 -0.055 -0.208
+   22     25.76  35.60  85.23  13.50   0.23  -0.36   -0.041 -0.078 -0.041 -0.003
+   23     15.76  35.27  86.14  11.50   0.37  -0.40   -0.040 -0.068 -0.075 -0.032
+   24      1.78  34.76  82.15   5.69   0.46  -0.66   -0.067 -0.037  0.054 -0.000
+   25     48.56 -45.72  23.43  22.57   0.12  -0.15   -0.011  0.073 -0.110  0.184
+   26     27.47 -70.14  -4.20  10.76   0.08  -0.43   -0.038  0.104 -0.142  0.144
+   27      0.08  -0.51  49.12  13.49   0.14  -0.34   -0.036  0.056 -0.128  0.119
+   28     58.96  37.66  76.16  11.47   0.64  -0.11   -0.041  0.004 -0.014 -0.043
+   29     20.01-148.93 -12.83  14.87   0.69   0.35   -0.057 -0.027  0.022  0.011
+   30      2.77  35.79  76.67  13.18   0.66  -0.01   -0.035 -0.040 -0.040 -0.095
+   31     20.85  36.21  77.38  14.20   0.78   0.01   -0.042 -0.121 -0.022 -0.016
+   32     50.67  36.78  76.85  15.35   0.15  -0.35   -0.037 -0.047 -0.080  0.015
+   33      0.69  37.17  76.03  15.77   0.27  -0.23   -0.031 -0.034 -0.060  0.040
+   34     55.34 -16.72  34.81  24.74   0.06  -0.17   -0.016  0.114 -0.033  0.060
+   35     39.14 -71.54  -8.63   4.61   0.30  -0.75   -0.016  0.121 -0.036  0.419
+   36     58.98  36.42  77.72  15.19   0.57  -0.07   -0.033 -0.054 -0.057  0.011
+   37      5.47  31.31  50.09  14.74   0.10  -0.37   -0.037 -0.025 -0.039 -0.058
+   38     46.36  72.96  72.90  17.15   0.38  -0.13   -0.039 -0.096 -0.032  0.078
+   39     13.90   0.88  26.11   4.59   0.30  -0.83   -0.060  0.058 -0.045  0.231
+   40     14.47 -41.73  13.94  17.09   0.12  -0.32   -0.040  0.063 -0.003  0.084
+   41     56.24  34.82  78.62   5.41   0.11  -0.77   -0.045 -0.026 -0.161  0.103
+   42     34.21  -3.79  46.17  18.21   0.11  -0.26   -0.027  0.091 -0.040  0.060
+   43     24.51-110.34 -39.44   5.98   0.37  -0.62   -0.025  0.127 -0.014  0.271
+   44     49.53  30.39  50.38   8.51   0.08  -0.53   -0.050  0.006 -0.050  0.073
+   45     41.05-145.33  45.70  18.80   0.70   0.42   -0.043 -0.077  0.100  0.145
+   46     33.98 -57.44  -1.19  16.70   0.10  -0.28   -0.034  0.067 -0.109  0.177
+   47      0.93  10.86  80.40  21.87   0.78   0.17   -0.019  0.104 -0.051 -0.011
+   48     37.11  10.79  81.62  23.73   0.13  -0.11   -0.016  0.105  0.000 -0.016
+   49     35.60  54.37  84.46  22.53   0.21  -0.20   -0.028 -0.127 -0.040 -0.018
+   50     35.95-102.29 -35.60  15.50   0.50   0.00   -0.038  0.144  0.005  0.026
+   51     52.97-101.22 -54.58   8.99   0.87   0.22   -0.068  0.058  0.048 -0.122
+   52     42.97-115.95  43.64  15.92   0.53   0.07   -0.067 -0.146  0.228  0.103
+   53      0.92  10.84  80.63  21.33   0.75   0.19   -0.021  0.097 -0.011  0.006
+   54      2.65 -83.69 322.72  15.68   0.46   1.98   -0.263 -0.007 -0.034  0.028
+   55      2.87 -89.65 304.27   0.51   0.40   1.67   -0.218  0.064 -0.007  0.039
+   56     44.76  35.94  67.43  15.10   0.71  -0.08   -0.035 -0.023 -0.128 -0.054
+   57     47.01 -84.50 154.82  15.62   0.70   1.55   -0.062  0.052  0.090  0.007
+   58     45.45 -80.70 151.04  15.22   1.08   0.96   -0.047  0.149  0.141  0.046
+   59      8.39 -82.15   0.14   3.60   0.74  -0.64   -0.032  0.117 -0.057  0.277
+   60      3.34-110.46-118.15   3.18   1.48   0.60   -0.077  0.086  0.162 -0.153
+   61      0.32-130.43 -55.03   0.83   0.49  -0.76   -0.079 -0.132  0.013  0.249
+   62     19.94  20.12 152.45  15.92   1.16   0.43   -0.045  0.248 -0.067  0.110
+   63     18.70 -46.97  29.69  20.82   0.11  -0.23   -0.028  0.088 -0.072  0.207
+   64      4.61-162.50 184.65   8.03   0.89   2.22   -0.074  0.483  0.568  0.008
+   65     23.32 -47.70  20.39  15.97   0.09  -0.32   -0.023  0.110 -0.081  0.153
+   66     32.67-152.78  43.28  18.64   0.50   0.24   -0.039 -0.137  0.159  0.228
+   67     41.78 -36.99  -5.33  19.31   0.17  -0.19   -0.032  0.100 -0.117  0.018
+   68     14.00  51.11 106.03  20.43   0.45   0.15   -0.060  0.085  0.139 -0.006
+   69     48.30-214.97-349.14  73.50   0.00   0.00    0.000  0.000  0.000  0.000
+   70      5.35  33.79  96.77  19.26   0.85   0.23   -0.042  0.025  0.008 -0.004
+   71      3.92   6.29  56.61   1.49   0.56  -0.77   -0.053  0.046 -0.022  0.059
+   72     55.99 132.65-297.75  96.98   8.96   2.99   -0.303 -0.020  0.027 -0.008
+   73     12.82  50.47  81.60  23.04   0.56   0.18   -0.021  0.014 -0.099 -0.011
+   74     36.07-102.59  70.66  22.84   0.46   0.16   -0.037 -0.033  0.139  0.321
+   75     46.37-108.61   3.10   0.47   1.10  -0.57   -0.099 -0.324  0.231  0.112
+   76     54.60-217.19 302.17   0.10   0.00   0.00    0.000  0.000  0.000  0.000
+   77     43.96  50.78  93.74  16.81   0.37  -0.10   -0.040 -0.051  0.007  0.013
+   78     41.69  38.44  66.21  22.01   0.46  -0.05   -0.031  0.018 -0.102  0.000
+   79     58.47 -69.38  -4.64   1.02   0.50  -0.81   -0.038  0.123 -0.045  0.291
+   80     26.59 -70.08  -6.16   1.49   0.46  -0.79   -0.032  0.022 -0.098  0.434
+   81     26.76 -69.70  -4.79   0.79   0.52  -0.78   -0.041  0.132 -0.058  0.211
+   82     23.14 -69.62  -4.67   0.73   0.46  -0.93   -0.047  0.154 -0.054  0.207
+   83     23.11 -70.77  -6.17   6.96   0.12  -0.62   -0.028  0.138 -0.004  0.117
+   84     21.14 -43.02   8.51  21.33   0.06  -0.21   -0.019  0.116 -0.103  0.101
+   85     24.38-167.27 -46.34  10.43   0.97   0.64   -0.067  0.054  0.044 -0.146
+   86     43.97 -12.10  29.95  18.71   0.07  -0.29   -0.039  0.067 -0.089  0.179
+   87     28.71 -61.52   6.84   3.78   0.20  -0.78   -0.022  0.063 -0.100  0.423
+   88     37.93-103.49 -28.34   8.44   0.44  -0.29   -0.046  0.136 -0.049 -0.022
+   89     47.69-142.24  89.95  21.19   0.74   0.76   -0.033 -0.147  0.185  0.320
+   90     48.18-140.15  88.71  21.04   0.69   0.68   -0.038 -0.108  0.216  0.303
+   91     33.90  33.81  85.24  19.69   0.65   0.10   -0.063  0.131  0.058  0.051
+
+ A V E R A G E   of ADJUSTMENTS :                    -0.050  0.019  0.002  0.083
+ A V E R A G E   of ABSOLUTE ADJUSTMENTS :            0.050  0.087  0.070  0.110
+
+
+ Step length damping of 0.11274 was applied.
+
+
+ Velocity adjustments:
+     vp    dvp      hp   reflector
+ Velocity model   1
+   4.770  0.046   -5.000      
+   4.927  0.073    3.010      
+   6.174 -0.019    8.020      
+   6.354 -0.029   13.040      
+   6.621 -0.024   21.020      
+   6.978 -0.023   24.880      
+   8.283  0.156   36.710      
+   8.725  0.014   40.900      
+   8.726  0.000   41.080      
+
+ Calculation of average velocity starts at layer #           1
+ z = -5.00 ...  3.01    v = 4.77    AVEL = 4.77 downto z =   3.01
+ z =  3.01 ...  8.02    v = 4.93    AVEL = 4.83 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.17    AVEL = 5.20 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.35    AVEL = 5.56 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.62    AVEL = 5.69 downto z =  24.88
+ z = 24.88 ... 36.71    v = 6.98    AVEL = 6.06 downto z =  36.71
+ z = 36.71 ... 40.90    v = 8.28    AVEL = 6.26 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.73    AVEL = 6.27 downto z =  41.08
+
+
+ Calculation of average velocity starts at layer #           2
+ z =  3.01 ...  8.02    v = 4.93    AVEL = 4.93 downto z =   8.02
+ z =  8.02 ... 13.04    v = 6.17    AVEL = 5.55 downto z =  13.04
+ z = 13.04 ... 21.02    v = 6.35    AVEL = 5.91 downto z =  21.02
+ z = 21.02 ... 24.88    v = 6.62    AVEL = 6.03 downto z =  24.88
+ z = 24.88 ... 36.71    v = 6.98    AVEL = 6.36 downto z =  36.71
+ z = 36.71 ... 40.90    v = 8.28    AVEL = 6.58 downto z =  40.90
+ z = 40.90 ... 41.08    v = 8.73    AVEL = 6.59 downto z =  41.08
+
+
+
+ Adjusted station corrections:
+   stn  ptcor  dpcor  
+  624   0.000  0.000  628  -0.088 -0.028  630  -0.074 -0.022  627   0.005  0.002
+  621   0.037  0.009  629   0.025  0.008  622   0.042  0.011  620   0.025  0.005
+  623   0.081  0.024  626   0.042  0.012  625   0.033  0.010  631   0.099  0.026
+  632  -0.018 -0.012
+
+ ~~~ another iteration? ...
+ NITT = ITTMAX  --> stop iterations.
+ ~~~ final solution reached ...
+
+ ~~~ damp G & Chol.-Decomp.: NOT made (switch iresolcalc is NOT set !)
+
+ Final rms values:  0.24 0.24 0.67 0.74 0.10 0.11 1.33 0.84 0.06 0.98
+                    1.17 0.17 0.32 0.67 0.77 0.79 0.53 0.12 0.12 0.31
+                    0.43 0.23 0.37 0.46 0.12 0.08 0.14 0.64 0.69 0.66
+                    0.78 0.15 0.27 0.06 0.30 0.57 0.10 0.38 0.30 0.12
+                    0.11 0.11 0.37 0.08 0.70 0.10 0.78 0.13 0.21 0.50
+                    0.87 0.53 0.75 0.46 0.40 0.71 0.70 1.08 0.74 1.48
+                    0.49 1.16 0.11 0.89 0.09 0.50 0.17 0.45 0.00 0.85
+                    0.56 8.96 0.56 0.46 1.10 0.00 0.37 0.46 0.50 0.46
+                    0.52 0.46 0.12 0.06 0.97 0.07 0.20 0.44 0.74 0.69
+                    0.65
+
+
+
+ ~~~ output final hypocenters ...
+
+      date    origin   latitude longitude  depth  mag  no  rms      x      y      z
+   1 160818 1613  8.94 73.0050N 124.8481E  23.35 1.40   6 0.243   38.67 112.14  23.35
+   2 160818 1613  9.13 72.9936N 124.8686E  23.08 1.10   6 0.245   38.00 110.87  23.08
+   3 160819 0959 27.10 71.9251N 129.7769E  12.89 4.00  12 0.668 -130.58  -8.36  12.89
+   4 160820 1506 15.44 71.9404N 129.8068E  11.11 1.50   9 0.738 -131.56  -6.65  11.11
+   5 160820 1904 45.59 72.3468N 127.1753E  23.90 1.20   6 0.104  -40.18  38.69  23.90
+   6 160822 1318 49.38 72.3641N 127.0687E  17.25 0.60   8 0.112  -36.51  40.63  17.25
+   7 160823 0652 13.76 70.9342N 129.7883E   5.84 2.90   6 1.331 -134.44-118.93   5.84
+   8 160824 1510 30.21 71.6066N 130.0445E   8.93 1.50   9 0.845 -141.02 -43.89   8.93
+   9 160906 1514 39.54 72.5069N 125.6787E  12.30 0.90   6 0.061   10.93  56.56  12.30
+  10 160920 1607 18.14 69.2374N 128.3667E  16.22 2.60   2 0.975  -87.68-308.26  16.22
+  11 160925 1911  5.33 69.2249N 127.7007E  15.63 2.30   2 1.172  -63.03-309.65  15.63
+  12 161004 0841 51.04 72.8486N 124.9625E  16.35 0.20   6 0.174   34.98  94.69  16.35
+  13 161005 1619 46.74 72.8772N 125.0048E  19.36 1.00   9 0.317   33.53  97.88  19.36
+  14 161006 0156 55.72 72.8733N 125.0102E  14.19 1.00   7 0.669   33.35  97.45  14.19
+  15 161009 0036 44.55 72.8722N 124.9908E  17.51 1.30   8 0.771   34.00  97.33  17.51
+  16 161009 0036 44.72 72.8602N 124.9660E  18.75 1.20   7 0.785   34.85  95.99  18.75
+  17 161012 0800 21.92 72.7394N 126.0247E  18.81 0.80   7 0.530   -0.84  82.51  18.81
+  18 161015 1013 36.35 72.0412N 126.9799E  12.05 0.70   7 0.115  -33.77   4.59  12.05
+  19 161021 0507 33.17 72.5735N 124.7845E  10.27 0.80   6 0.123   41.29  63.99  10.27
+  20 161124 2250 45.81 72.7626N 124.8824E  16.27 3.10   4 0.314   37.77  85.09  16.27
+  21 161125 0156 33.97 72.7405N 124.9270E  13.93 0.60   7 0.425   36.29  82.63  13.93
+  22 161125 0517 25.76 72.7638N 124.9467E  13.50 1.60   6 0.227   35.60  85.23  13.50
+  23 161125 0525 15.76 72.7720N 124.9560E  11.50 0.80   6 0.369   35.27  86.14  11.50
+  24 161125 0556  1.78 72.7362N 124.9721E   5.69 0.20   6 0.464   34.76  82.15   5.69
+  25 170117 0846 48.56 72.2099N 127.3325E  22.57 0.30   6 0.123  -45.72  23.43  22.57
+  26 170122 1614 27.47 71.9624N 128.0308E  10.76 0.90   6 0.078  -70.14  -4.20  10.76
+  27 170125 2244  0.08 72.4402N 126.0148E  13.49 0.80   6 0.136   -0.51  49.12  13.49
+  28 170302 1359 58.96 72.6825N 124.8881E  11.47 0.50   7 0.637   37.66  76.16  11.47
+  29 170302 2335 20.01 71.8850N 130.3030E  14.87 2.10   9 0.695 -148.93 -12.83  14.87
+  30 170304 2135  2.77 72.6871N 124.9432E  13.18 1.30   7 0.657   35.79  76.67  13.18
+  31 170307 0447 20.85 72.6935N 124.9305E  14.20 1.70  10 0.782   36.21  77.38  14.20
+  32 170307 2016 50.67 72.6887N 124.9140E  15.35 1.10   6 0.145   36.78  76.85  15.35
+  33 170309 1454  0.69 72.6814N 124.9026E  15.77 0.30   6 0.274   37.17  76.03  15.77
+  34 170311 0430 55.34 72.3120N 126.4886E  24.74 0.30   6 0.062  -16.72  34.81  24.74
+  35 170312 0416 39.14 71.9227N 128.0693E   4.61 2.10   6 0.302  -71.54  -8.63   4.61
+  36 170313 0553 58.98 72.6965N 124.9243E  15.19 1.00   9 0.571   36.42  77.72  15.19
+  37 170313 0809  5.47 72.4489N 125.0816E  14.74 1.20   7 0.100   31.31  50.09  14.74
+  38 170315 0234 46.36 72.6533N 123.8477E  17.15 1.40   7 0.379   72.96  72.90  17.15
+  39 170317 1007 13.90 72.2340N 125.9743E   4.59 0.50   7 0.305    0.88  26.11   4.59
+  40 170320 0711 14.47 72.1250N 127.2135E  17.09 0.90   6 0.117  -41.73  13.94  17.09
+  41 170320 0853 56.24 72.7045N 124.9713E   5.41 0.40   6 0.109   34.82  78.62   5.41
+  42 170320 1900 34.21 72.4138N 126.1112E  18.21 0.60   7 0.107   -3.79  46.17  18.21
+  43 170323 0519 24.51 71.6465N 129.1679E   5.98 1.20   6 0.371 -110.34 -39.44   5.98
+  44 170323 1612 49.53 72.4515N 125.1085E   8.51 0.50   6 0.085   30.39  50.38   8.51
+  45 170323 1906 41.05 72.4095N 130.2588E  18.80 1.00   6 0.701 -145.33  45.70  18.80
+  46 170326 0836 33.98 71.9893N 127.6642E  16.70 1.50   7 0.097  -57.44  -1.19  16.70
+  47 170402 0422  0.93 72.7206N 125.6791E  21.87 1.20  10 0.780   10.86  80.40  21.87
+  48 170402 0636 37.11 72.7315N 125.6809E  23.73 0.70   6 0.126   10.79  81.62  23.73
+  49 170404 2347 35.60 72.7569N 124.3914E  22.53 0.50   6 0.209   54.37  84.46  22.53
+  50 170405 0307 35.95 71.6810N 128.9394E  15.50 1.00  10 0.496 -102.29 -35.60  15.50
+  51 170405 1410 52.97 71.5108N 128.8957E   8.99 1.70  10 0.869 -101.22 -54.58   8.99
+  52 170406 0838 42.97 72.3911N 129.3962E  15.92 0.90  10 0.530 -115.95  43.64  15.92
+  53 170406 1728  0.92 72.7226N 125.6797E  21.33 0.90  10 0.755   10.84  80.63  21.33
+  54 170407 1729  2.65 74.8922N 128.6306E  15.68 1.80   2 0.458  -83.69 322.72  15.68
+  55 170407 1729  2.87 74.7268N 128.8041E   0.51 1.60   5 0.397  -89.65 304.27   0.51
+  56 170408 1004 44.76 72.6043N 124.9412E  15.10 1.40  13 0.706   35.94  67.43  15.10
+  57 170409 0856 47.01 73.3875N 128.5440E  15.62 2.50   6 0.701  -84.50 154.82  15.62
+  58 170409 0902 45.45 73.3536N 128.4273E  15.22 1.10   7 1.080  -80.70 151.04  15.22
+  59 170410 1520  8.39 72.0013N 128.3809E   3.60 1.00  10 0.738  -82.15   0.14   3.60
+  60 170410 1813  3.34 70.9411N 129.1132E   3.18 2.20  13 1.478 -110.46-118.15   3.18
+  61 170412 1507  0.32 71.5068N 129.7309E   0.83 0.70   6 0.495 -130.43 -55.03   0.83
+  62 170413 0651 19.94 73.3663N 125.3947E  15.92 1.00  10 1.162   20.12 152.45  15.92
+  63 170414 0459 18.70 72.2660N 127.3711E  20.82 0.50   7 0.112  -46.97  29.69  20.82
+  64 170414 0540  4.61 73.6548N 130.9289E   8.03 1.80  11 0.893 -162.50 184.65   8.03
+  65 170414 1656 23.32 72.1827N 127.3893E  15.97 0.20   6 0.088  -47.70  20.39  15.97
+  66 170414 1753 32.67 72.3879N 130.4746E  18.64 0.70   6 0.496 -152.78  43.28  18.64
+  67 170416 0523 41.78 71.9523N 127.0707E  19.31 1.60  13 0.173  -36.99  -5.33  19.31
+  68 170416 1220 14.00 72.9502N 124.4799E  20.43 1.00  11 0.454   51.11 106.03  20.43
+ WARNING: Event-# :          69 has zero observations!
+  69 170416 1257 48.30 68.8710N 131.7500E  73.50 2.20   0 0.000 -214.97-349.14  73.50
+  70 170416 1821  5.35 72.8672N 124.9973E  19.26 1.30  13 0.848   33.79  96.77  19.26
+  71 170418 0606  3.92 72.5074N 125.8152E   1.49 0.20   6 0.556    6.29  56.61   1.49
+  72 170418 1005 55.99 69.3316N 122.4114E  96.98 2.20   1 8.964  132.65-297.75  96.98
+  73 170418 1500 12.82 72.7313N 124.5080E  23.04 1.30  12 0.563   50.47  81.60  23.04
+  74 170420 1302 36.07 72.6333N 129.0247E  22.84 0.90  11 0.458 -102.59  70.66  22.84
+  75 170420 2248 46.37 72.0278N 129.1500E   0.47 0.70  11 1.103 -108.61   3.10   0.47
+ WARNING: Event-# :          76 has zero observations!
+  76 170423 0850 54.60 74.7080N 132.7900E   0.10 1.90   0 0.000 -217.19 302.17   0.10
+  77 170423 1455 43.96 72.8401N 124.4943E  16.81 0.60   8 0.370   50.78  93.74  16.81
+  78 170423 2313 41.69 72.5933N 124.8679E  22.01 1.30  12 0.464   38.44  66.21  22.01
+  79 170424 0609 58.47 71.9585N 128.0087E   1.02 1.10  12 0.499  -69.38  -4.64   1.02
+  80 170424 0755 26.59 71.9448N 128.0282E   1.49 1.00  12 0.461  -70.08  -6.16   1.49
+  81 170424 0755 26.76 71.9571N 128.0178E   0.79 1.00  12 0.520  -69.70  -4.79   0.79
+  82 170425 0652 23.14 71.9581N 128.0155E   0.73 1.20   9 0.460  -69.62  -4.67   0.73
+  83 170426 0051 23.11 71.9447N 128.0480E   6.96 0.70   6 0.119  -70.77  -6.17   6.96
+  84 170426 1425 21.14 72.0762N 127.2493E  21.33 0.10   6 0.056  -43.02   8.51  21.33
+  85 170426 1834 24.38 71.5847N 130.7944E  10.43 1.20   8 0.965 -167.27 -46.34  10.43
+  86 170426 1840 43.97 72.2684N 126.3532E  18.71 1.30   8 0.065  -12.10  29.95  18.71
+  87 170427 0912 28.71 72.0613N 127.7859E   3.78 0.90   8 0.201  -61.52   6.84   3.78
+  88 170427 1041 37.93 71.7460N 128.9792E   8.44 0.70   7 0.440 -103.49 -28.34   8.44
+  89 170427 2010 47.69 72.8061N 130.2138E  21.19 1.30   8 0.739 -142.24  89.95  21.19
+  90 170427 2010 48.18 72.7950N 130.1505E  21.04 1.30   8 0.689 -140.15  88.71  21.04
+  91 170427 2342 33.90 72.7639N 124.9996E  19.69 0.80   6 0.649   33.81  85.24  19.69
+
+ ~~~ output final station residuals ...
+ TURBO-option is set; residuals are NOT printed for each event!
+
+
+
+   station statistics, remember nsp was set to: 1
+
+
+ sta phase nobs avres  avwres    std    wsum    delay
+
+ 624    P  74 -0.1772 -0.1772  0.5935  74.0000  0.0000
+ 628    P  69 -0.4286 -0.4286  0.5975  69.0000 -0.0875
+ 630    P  53 -0.1252 -0.1252  0.5109  53.0000 -0.0743
+ 627    P  46 -0.1876 -0.1876  0.7691  46.0000  0.0046
+ 621    P  59  0.1783  0.1783  0.9098  59.0000  0.0371
+ 629    P  43 -0.1412 -0.1412  0.6564  43.0000  0.0248
+ 622    P  58 -0.0541 -0.0541  0.7956  58.0000  0.0419
+ 620    P  48 -0.1307 -0.1307  0.8112  48.0000  0.0248
+ 623    P  55 -0.0248 -0.0248  0.5891  55.0000  0.0807
+ 626    P  52  0.0478  0.0478  0.7974  52.0000  0.0421
+ 625    P  49 -0.0788 -0.0788  0.7268  49.0000  0.0329
+ 631    P  49  0.7554  0.7554  1.3498  49.0000  0.0990
+ 632    P  24  0.3501  0.3501  1.2546  24.0000 -0.0178
+
+
+ ~~~ output statistics ...
+
+
+
+
+ RAY-STATISTICS FOR  L A S T  ITERATION
+ --------------------------------------
+
+ NHYP : nr of hypocenters in this layer
+ NREF : nr of headwaves in this layer
+ %len : % of "refracted km" in this layer 
+        with respect to all refracted kilometers
+ NHIT : nr of rays passed thru this layer
+ xy-km: average horizontal ray length [km] in layer
+ z-km : average  vertical  ray length [km] in layer
+ RFLX : number of reflections at bottom of this layer
+
+ nlay   top ..... bottom     velocity   NHYP NREF %len  NHIT xy-km  z-km  RFLX
+
+   1    -5.00...  3.01 km    4.77 km/s    9    0   0.0   737   3.4   2.9     0
+   2     3.01...  8.02 km    4.93 km/s   10    1   0.1   782   5.2   4.8     0
+   3     8.02... 13.04 km    6.17 km/s   14   72  18.2   764  15.6   4.2     0
+   4    13.04... 21.02 km    6.35 km/s   41   47  13.6   711  19.0   5.6     0
+   5    21.02... 24.88 km    6.62 km/s   15    9   1.4   519   6.8   3.4     0
+   6    24.88... 36.71 km    6.98 km/s    0   62  14.8   387  20.6   9.9     0
+   7    36.71... 40.90 km    8.28 km/s    0    0   0.0   325  12.6   4.2     0
+   8    40.90... 41.08 km    8.73 km/s    0   30   6.8   295  15.1   0.2     0
+   9    41.08...       km    8.73 km/s    2  132  45.1     0   0.0   0.0
+
+ Total nr of events was   91
+
+ Total nr of refracted rays =   353
+ Total nr of reflected rays =     0
+ Total nr of   other   rays =   326
+                              ------
+ Total nr of    all    rays =   679
+
+ Average (absolute) error of the raytracers:
+  Straight and direct rays :    7.74 meters
+  Refracted           rays :    0.01 meters
+  Reflected           rays :    0.00 meters
+
+
+ ALL RAYS TOGETHER:
+ Average horizontal ray length =   89.9 km   (Hypocenter --> Station) 
+ Average  vertical  ray length =   21.8 km   (Deepest ray-point --> Station)
+
+
+
+ ... and some more STATISTICS 
+ ---------------------------- 
+  GAP of final epicenters:
+
+  Event# -> GAP  Event# -> GAP  Event# -> GAP  Event# -> GAP  Event# -> GAP
+       1 -> 296       2 -> 294       3 -> 270       4 -> 274       5 -> 307
+       6 ->  98       7 -> 320       8 -> 306       9 -> 168      10 -> 346
+      11 -> 347      12 -> 259      13 -> 263      14 -> 263      15 -> 262
+      16 -> 264      17 -> 253      18 -> 243      19 -> 160      20 -> 302
+      21 -> 232      22 -> 238      23 -> 241      24 -> 229      25 -> 130
+      26 -> 102      27 -> 154      28 -> 211      29 -> 305      30 -> 213
+      31 -> 215      32 -> 213      33 -> 211      34 -> 133      35 -> 241
+      36 -> 216      37 -> 132      38 -> 310      39 -> 117      40 -> 209
+      41 -> 218      42 -> 121      43 -> 234      44 -> 134      45 -> 309
+      46 -> 125      47 -> 224      48 -> 226      49 -> 287      50 -> 195
+      51 -> 290      52 -> 270      53 -> 224      54 -> 354      55 -> 347
+      56 -> 180      57 -> 310      58 -> 318      59 -> 166      60 -> 310
+      61 -> 301      62 -> 306      63 -> 149      64 -> 323      65 -> 129
+      66 -> 293      67 ->  86      68 -> 295      69 -> 171      70 -> 261
+      71 -> 173      72 ->   0      73 -> 259      74 -> 299      75 -> 241
+      76 ->  59      77 -> 283      78 -> 173      79 -> 164      80 -> 170
+      81 -> 165      82 -> 165      83 -> 235      84 -> 115      85 -> 315
+      86 ->  94      87 -> 115      88 -> 270      89 -> 318      90 -> 317
+      91 -> 295
+
+ GAPs were between   0 and 354
+      (average GAP was 228)
+
+
+
+  MAGNITUDES of INPUT-DATA:
+
+ Magnitude (# of events)   ***average number of obs***
+
+ MAG<= 1.0 ( 47) *******
+ MAG = 1.1 (  4) ********
+ MAG = 1.2 (  7) ********
+ MAG = 1.3 (  8) *********1
+ MAG = 1.4 (  3) *********
+ MAG = 1.5 (  3) ********
+ MAG = 1.6 (  3) ********
+ MAG = 1.7 (  2) *********1
+ MAG = 1.8 (  2) *******
+ MAG = 1.9 (  1)  
+ MAG = 2.0 (  0)  
+ MAG = 2.1 (  2) ********
+ MAG = 2.2 (  3) *****
+ MAG = 2.3 (  1) **
+ MAG = 2.4 (  0)  
+ MAG = 2.5 (  1) ******
+ MAG = 2.6 (  1) **
+ MAG = 2.7 (  0)  
+ MAG = 2.8 (  0)  
+ MAG = 2.9 (  1) ******
+ MAG = 3.0 (  0)  
+ MAG = 3.1 (  1) ****
+ MAG = 3.2 (  0)  
+ MAG = 3.3 (  0)  
+ MAG = 3.4 (  0)  
+ MAG = 3.5 (  0)  
+ MAG = 3.6 (  0)  
+ MAG = 3.7 (  0)  
+ MAG = 3.8 (  0)  
+ MAG = 3.9 (  0)  
+ MAG = 4.0 (  1) *********1**
+ MAG = 4.1 (  0)  
+ MAG = 4.2 (  0)  
+ MAG = 4.3 (  0)  
+ MAG = 4.4 (  0)  
+ MAG = 4.5 (  0)  
+ MAG = 4.6 (  0)  
+ MAG = 4.7 (  0)  
+ MAG = 4.8 (  0)  
+ MAG = 4.9 (  0)  
+ MAG = 5.0 (  0)  
+ MAG = 5.1 (  0)  
+ MAG = 5.2 (  0)  
+ MAG = 5.3 (  0)  
+ MAG = 5.4 (  0)  
+ MAG = 5.5 (  0)  
+ MAG = 5.6 (  0)  
+ MAG = 5.7 (  0)  
+ MAG = 5.8 (  0)  
+ MAG = 5.9 (  0)  
+ MAG>= 6.0 (  0)  
+
+
+
+
+
+  DEPTHs of INPUT-DATA and of LAST ITERATION:
+  ===========================================
+
+       Depth       # of events  
+
+ DEPTH ( input ) =  -4. km :   
+ DEPTH (last_IT) =  -4. km :   
+ DEPTH ( input ) =  -3. km :   
+ DEPTH (last_IT) =  -3. km :   
+ DEPTH ( input ) =  -2. km :   
+ DEPTH (last_IT) =  -2. km :   
+ DEPTH ( input ) =  -1. km :   
+ DEPTH (last_IT) =  -1. km :   
+ DEPTH ( input ) =   0. km :  ........
+ DEPTH (last_IT) =   0. km :  **
+ DEPTH ( input ) =   1. km :  .
+ DEPTH (last_IT) =   1. km :  *******
+ DEPTH ( input ) =   2. km :   
+ DEPTH (last_IT) =   2. km :   
+ DEPTH ( input ) =   3. km :  ...
+ DEPTH (last_IT) =   3. km :  *
+ DEPTH ( input ) =   4. km :  ..
+ DEPTH (last_IT) =   4. km :  **
+ DEPTH ( input ) =   5. km :  ..
+ DEPTH (last_IT) =   5. km :  ***
+ DEPTH ( input ) =   6. km :  ..
+ DEPTH (last_IT) =   6. km :  ***
+ DEPTH ( input ) =   7. km :  .
+ DEPTH (last_IT) =   7. km :  *
+ DEPTH ( input ) =   8. km :  ...
+ DEPTH (last_IT) =   8. km :  **
+ DEPTH ( input ) =   9. km :  ..
+ DEPTH (last_IT) =   9. km :  ***
+ DEPTH ( input ) =  10. km :  ..
+ DEPTH (last_IT) =  10. km :  **
+ DEPTH ( input ) =  11. km :  ...
+ DEPTH (last_IT) =  11. km :  ****
+ DEPTH ( input ) =  12. km :  ....
+ DEPTH (last_IT) =  12. km :  **
+ DEPTH ( input ) =  13. km :  ..
+ DEPTH (last_IT) =  13. km :  ****
+ DEPTH ( input ) =  14. km :  ...
+ DEPTH (last_IT) =  14. km :  ***
+ DEPTH ( input ) =  15. km :  ........
+ DEPTH (last_IT) =  15. km :  *******
+ DEPTH ( input ) =  16. km :  .........1.
+ DEPTH (last_IT) =  16. km :  *********1
+ DEPTH ( input ) =  17. km :  .....
+ DEPTH (last_IT) =  17. km :  *****
+ DEPTH ( input ) =  18. km :  ....
+ DEPTH (last_IT) =  18. km :  **
+ DEPTH ( input ) =  19. km :  .....
+ DEPTH (last_IT) =  19. km :  ********
+ DEPTH ( input ) =  20. km :  .....
+ DEPTH (last_IT) =  20. km :  **
+ DEPTH ( input ) =  21. km :  ..
+ DEPTH (last_IT) =  21. km :  *****
+ DEPTH ( input ) =  22. km :  ....
+ DEPTH (last_IT) =  22. km :  **
+ DEPTH ( input ) =  23. km :  ....
+ DEPTH (last_IT) =  23. km :  ******
+ DEPTH ( input ) =  24. km :  ..
+ DEPTH (last_IT) =  24. km :  **
+ DEPTH ( input ) =  25. km :  .
+ DEPTH (last_IT) =  25. km :  *
+ DEPTH ( input ) =  26. km :   
+ DEPTH (last_IT) =  26. km :   
+ DEPTH ( input ) =  27. km :   
+ DEPTH (last_IT) =  27. km :   
+ DEPTH ( input ) =  28. km :   
+ DEPTH (last_IT) =  28. km :   
+ DEPTH ( input ) =  29. km :   
+ DEPTH (last_IT) =  29. km :   
+ DEPTH ( input ) =  30. km :   
+ DEPTH (last_IT) =  30. km :   
+ DEPTH ( input ) =  31. km :   
+ DEPTH (last_IT) =  31. km :   
+ DEPTH ( input ) =  32. km :   
+ DEPTH (last_IT) =  32. km :   
+ DEPTH ( input ) =  33. km :   
+ DEPTH (last_IT) =  33. km :   
+ DEPTH ( input ) =  34. km :   
+ DEPTH (last_IT) =  34. km :   
+ DEPTH ( input ) =  35. km :   
+ DEPTH (last_IT) =  35. km :   
+ DEPTH ( input ) =  36. km :   
+ DEPTH (last_IT) =  36. km :   
+ DEPTH ( input ) =  37. km :   
+ DEPTH (last_IT) =  37. km :   
+ DEPTH ( input ) =  38. km :   
+ DEPTH (last_IT) =  38. km :   
+ DEPTH ( input ) =  39. km :   
+ DEPTH (last_IT) =  39. km :   
+ DEPTH ( input ) =  40. km :   
+ DEPTH (last_IT) =  40. km :   
+ DEPTH ( input ) =  41. km :   
+ DEPTH (last_IT) =  41. km :   
+ DEPTH ( input ) =  42. km :   
+ DEPTH (last_IT) =  42. km :   
+ DEPTH ( input ) =  43. km :   
+ DEPTH (last_IT) =  43. km :   
+ DEPTH ( input ) =  44. km :   
+ DEPTH (last_IT) =  44. km :   
+ DEPTH ( input ) =  45. km :   
+ DEPTH (last_IT) =  45. km :   
+ DEPTH ( input ) =  46. km :   
+ DEPTH (last_IT) =  46. km :   
+ DEPTH ( input ) =  47. km :   
+ DEPTH (last_IT) =  47. km :   
+ DEPTH ( input ) =  48. km :   
+ DEPTH (last_IT) =  48. km :   
+ DEPTH ( input ) =  49. km :   
+ DEPTH (last_IT) =  49. km :   
+ DEPTH ( input ) =  50. km :   
+ DEPTH (last_IT) =  50. km :   
+ DEPTH ( input ) =  51. km :   
+ DEPTH (last_IT) =  51. km :   
+ DEPTH ( input ) =  52. km :   
+ DEPTH (last_IT) =  52. km :   
+ DEPTH ( input ) =  53. km :   
+ DEPTH (last_IT) =  53. km :   
+ DEPTH ( input ) =  54. km :   
+ DEPTH (last_IT) =  54. km :   
+ DEPTH ( input ) =  55. km :   
+ DEPTH (last_IT) =  55. km :   
+ DEPTH ( input ) =  56. km :   
+ DEPTH (last_IT) =  56. km :   
+ DEPTH ( input ) =  57. km :   
+ DEPTH (last_IT) =  57. km :   
+ DEPTH ( input ) =  58. km :   
+ DEPTH (last_IT) =  58. km :   
+ DEPTH ( input ) =  59. km :   
+ DEPTH (last_IT) =  59. km :   
+ DEPTH ( input ) =  60. km :   
+ DEPTH (last_IT) =  60. km :   
+ DEPTH ( input ) =  61. km :   
+ DEPTH (last_IT) =  61. km :   
+ DEPTH ( input ) =  62. km :   
+ DEPTH (last_IT) =  62. km :   
+ DEPTH ( input ) =  63. km :   
+ DEPTH (last_IT) =  63. km :   
+ DEPTH ( input ) =  64. km :   
+ DEPTH (last_IT) =  64. km :   
+ DEPTH ( input ) =  65. km :   
+ DEPTH (last_IT) =  65. km :   
+ DEPTH ( input ) =  66. km :   
+ DEPTH (last_IT) =  66. km :   
+ DEPTH ( input ) =  67. km :   
+ DEPTH (last_IT) =  67. km :   
+ DEPTH ( input ) =  68. km :   
+ DEPTH (last_IT) =  68. km :   
+ DEPTH ( input ) =  69. km :   
+ DEPTH (last_IT) =  69. km :   
+ DEPTH ( input ) =  70. km :   
+ DEPTH (last_IT) =  70. km :   
+ DEPTH ( input ) =  71. km :   
+ DEPTH (last_IT) =  71. km :   
+ DEPTH ( input ) =  72. km :   
+ DEPTH (last_IT) =  72. km :   
+ DEPTH ( input ) =  73. km :   
+ DEPTH (last_IT) =  73. km :   
+ DEPTH ( input ) =  74. km :  .
+ DEPTH (last_IT) =  74. km :  *
+ DEPTH ( input ) =  75. km :   
+ DEPTH (last_IT) =  75. km :   
+ DEPTH ( input ) =  76. km :   
+ DEPTH (last_IT) =  76. km :   
+ DEPTH ( input ) =  77. km :   
+ DEPTH (last_IT) =  77. km :   
+ DEPTH ( input ) =  78. km :   
+ DEPTH (last_IT) =  78. km :   
+ DEPTH ( input ) =  79. km :   
+ DEPTH (last_IT) =  79. km :   
+ DEPTH ( input ) =  80. km :   
+ DEPTH (last_IT) =  80. km :   
+ DEPTH ( input ) =  81. km :   
+ DEPTH (last_IT) =  81. km :   
+ DEPTH ( input ) =  82. km :   
+ DEPTH (last_IT) =  82. km :   
+ DEPTH ( input ) =  83. km :   
+ DEPTH (last_IT) =  83. km :   
+ DEPTH ( input ) =  84. km :   
+ DEPTH (last_IT) =  84. km :   
+ DEPTH ( input ) =  85. km :   
+ DEPTH (last_IT) =  85. km :   
+ DEPTH ( input ) =  86. km :   
+ DEPTH (last_IT) =  86. km :   
+ DEPTH ( input ) =  87. km :   
+ DEPTH (last_IT) =  87. km :   
+ DEPTH ( input ) =  88. km :   
+ DEPTH (last_IT) =  88. km :   
+ DEPTH ( input ) =  89. km :   
+ DEPTH (last_IT) =  89. km :   
+ DEPTH ( input ) =  90. km :   
+ DEPTH (last_IT) =  90. km :   
+ DEPTH ( input ) =  91. km :   
+ DEPTH (last_IT) =  91. km :   
+ DEPTH ( input ) =  92. km :   
+ DEPTH (last_IT) =  92. km :   
+ DEPTH ( input ) =  93. km :   
+ DEPTH (last_IT) =  93. km :   
+ DEPTH ( input ) =  94. km :   
+ DEPTH (last_IT) =  94. km :   
+ DEPTH ( input ) =  95. km :   
+ DEPTH (last_IT) =  95. km :   
+ DEPTH ( input ) =  96. km :   
+ DEPTH (last_IT) =  96. km :   
+ DEPTH ( input ) =  97. km :  .
+ DEPTH (last_IT) =  97. km :  *
+ DEPTH ( input ) =  98. km :   
+ DEPTH (last_IT) =  98. km :   
+ DEPTH ( input ) =  99. km :   
+ DEPTH (last_IT) =  99. km :   
+ DEPTH ( input ) = 100. km :   
+ DEPTH (last_IT) = 100. km :   
+ DEPTH ( input ) > 100. km :   
+ DEPTH (last_IT) > 100. km :   
+
+
+ Residuals of the stations according to the azimuth:
+ (RES  = total average residual at station)
+ (RES1 = average residual of rays from 1st quadrant)
+ (RES2 = average residual of rays from 2nd quadrant)
+ (RES3 = average residual of rays from 3rd quadrant)
+ (RES4 = average residual of rays from 4th quadrant)
+
+ Stn#  Stn     RES          RES1         RES2         RES3         RES4
+   1   624    -0.18(  74)  -0.30(  33)  -0.44(   5)  -0.16(  29)   0.55(   7)
+   2   628    -0.43(  69)  -0.54(  32)  -0.49(   5)  -0.51(  25)   0.41(   7)
+   3   630    -0.13(  53)   0.15(  25)  -0.39(  10)  -0.74(  10)   0.13(   8)
+   4   627    -0.19(  46)  -0.03(  12)  -0.29(   1)  -0.63(  21)   0.43(  12)
+   5   621     0.18(  59)  -0.15(   7)   0.00(   0)   0.44(  18)   0.11(  34)
+   6   629    -0.14(  43)   0.19(  15)   0.00(   0)  -0.51(   9)  -0.23(  19)
+   7   622    -0.05(  58)  -0.38(  27)   0.00(   0)   0.14(  20)   0.38(  11)
+   8   620    -0.13(  48)   0.00(   0)  -0.30(   1)   0.20(  18)  -0.33(  29)
+   9   623    -0.02(  55)  -0.23(  30)   0.00(   0)   0.22(  17)   0.23(   8)
+  10   626     0.05(  52)  -0.01(  24)   0.00(   0)  -0.08(   6)   0.15(  22)
+  11   625    -0.08(  49)  -0.19(  14)   0.00(   0)  -0.24(  23)   0.36(  12)
+  12   631     0.76(  49)   1.16(  18)   2.99(   1)   1.39(   4)   0.29(  26)
+  13   632     0.35(  24)   0.88(  12)   2.00(   2)  -0.85(   3)  -0.51(   7)
+
+
+
+ CPU - statistics:
+
+ TOTAL CPU-sec          =    0.2     (CPU-minutes:  0.003)
+
+ >>>   End of program VELEST at 25-06-02 16:13       <<< [ CPU-sec :     0.2]
